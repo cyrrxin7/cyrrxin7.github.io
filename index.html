@@ -6,11 +6,13 @@
 <title>李心愉 | 個人專業主頁</title>
 <style>
 :root {
-/* 科技極簡黑灰白配色 (無任何突兀藍色) */
---tech-black: #0f172a; /* 極深灰黑 (標題/線條) */
---tech-dark: #334155; /* 深灰 (主要文字) */
+/* 專業科技藍配色 */
+--tech-primary: #1e3a8a; /* 深海軍藍 (標題/線條/重要文字) */
+--tech-accent: #2563eb; /* 亮藍色 (用於超連結等點綴) */
+--tech-dark: #334155; /* 深灰 (主要內文，避免全黑太死板) */
 --tech-gray: #64748b; /* 中灰 (次要/敘述文字) */
---tech-light: #f1f5f9; /* 淺灰 (標籤底色) */
+--tech-light: #eff6ff; /* 冰藍色 (標籤底色) */
+--tag-border: #bfdbfe; /* 淺藍色 (標籤邊框) */
 --bg-page: #f8fafc;
 --card-bg: #ffffff;
 --border-line: #e2e8f0;
@@ -23,7 +25,7 @@ margin: 40px auto;
 padding: 0 20px;
 color: var(--tech-dark);
 background-color: var(--bg-page);
--webkit-font-smoothing: antialiased; /* 字體平滑、增加科技質感 */
+-webkit-font-smoothing: antialiased;
 }
 .container {
 background: var(--card-bg);
@@ -54,7 +56,7 @@ flex-shrink: 0;
 .header-info h1 {
 margin: 0 0 8px 0;
 font-size: 1.8rem;
-color: var(--tech-black);
+color: var(--tech-primary);
 letter-spacing: -0.5px;
 }
 .header-info p {
@@ -71,20 +73,20 @@ flex-wrap: wrap;
 gap: 8px;
 }
 .tag {
-background-color: var(--card-bg);
-color: var(--tech-black);
-border: 1px solid #cbd5e1;
+background-color: var(--tech-light);
+color: var(--tech-primary);
+border: 1px solid var(--tag-border);
 padding: 3px 12px;
-border-radius: 4px; /* 方正導角更具科技感 */
+border-radius: 4px;
 font-size: 0.8rem;
 font-weight: 600;
 }
 
-/* 區塊標題 (極簡深灰線條) */
+/* 區塊標題 (專業藍線條) */
 h2 {
-color: var(--tech-black);
+color: var(--tech-primary);
 font-size: 1.2rem;
-border-left: 3px solid var(--tech-black); /* 沉穩極簡黑線 */
+border-left: 4px solid var(--tech-primary);
 padding-left: 12px;
 margin-top: 40px;
 margin-bottom: 16px;
@@ -102,7 +104,7 @@ box-sizing: border-box;
 }
 .card h3 {
 margin-top: 0;
-color: var(--tech-black);
+color: var(--tech-primary);
 font-size: 1.1rem;
 display: flex;
 justify-content: space-between;
@@ -117,8 +119,8 @@ font-weight: normal;
 }
 .badge {
 background: var(--tech-light);
-color: var(--tech-black);
-border: 1px solid var(--border-line);
+color: var(--tech-primary);
+border: 1px solid var(--tag-border);
 font-size: 0.75rem;
 font-weight: 600;
 padding: 2px 8px;
@@ -136,7 +138,7 @@ margin-bottom: 0;
 }
 .exp-kw {
 font-weight: 600;
-color: var(--tech-black);
+color: var(--tech-primary);
 font-size: 0.95rem;
 margin-bottom: 2px;
 }
@@ -167,7 +169,7 @@ margin-bottom: 6px;
 .role-title {
 font-size: 0.92rem;
 font-weight: 600;
-color: var(--tech-black);
+color: var(--tech-primary);
 margin: 12px 0 6px 0;
 }
 .tech-tags-row {
@@ -177,8 +179,8 @@ white-space: nowrap; /* 絕對不換行 */
 }
 .tech-tag {
 background-color: var(--tech-light);
-color: var(--tech-dark);
-border: 1px solid var(--border-line);
+color: var(--tech-primary);
+border: 1px solid var(--tag-border);
 padding: 2px 8px;
 border-radius: 4px;
 font-size: 0.8rem;
@@ -221,12 +223,12 @@ flex-wrap: wrap; /* 手機版才允許換行 */
 }
 }
 a {
-color: var(--tech-black);
-text-decoration: underline;
+color: var(--tech-accent);
+text-decoration: none;
 font-weight: 500;
 }
 a:hover {
-color: var(--tech-gray);
+text-decoration: underline;
 }
 .footer {
 text-align: center;
@@ -300,7 +302,7 @@ color: var(--tech-gray);
 <h2>專業證照</h2>
 <div class="card">
 <div>
-<strong style="color: var(--tech-black); display: block; margin-bottom: 8px;">數位行銷與數據分析</strong>
+<strong style="color: var(--tech-primary); display: block; margin-bottom: 8px;">數位行銷與數據分析</strong>
 <ul class="simple-list" style="margin-top: 0;">
 <li>Google Analytics (GA4) 認證</li>
 <li>Google Ads AI 科技輔助購物廣告認證</li>
@@ -309,7 +311,7 @@ color: var(--tech-gray);
 </div>
 <hr style="border: 0; border-top: 1px dashed var(--border-line); margin: 20px 0;">
 <div>
-<strong style="color: var(--tech-black); display: block; margin-bottom: 8px;">商管與內部控制</strong>
+<strong style="color: var(--tech-primary); display: block; margin-bottom: 8px;">商管與內部控制</strong>
 <ul class="simple-list" style="margin-top: 0;">
 <li>中華民國電腦稽核協會 企業內部控制認證</li>
 <li>會計事務 - 資訊 丙級技術士</li>
@@ -324,7 +326,7 @@ color: var(--tech-gray);
 <h2>專案經歷</h2>
 <div class="card">
 <div>
-<h4 style="margin: 0 0 6px 0; color: var(--tech-black); font-size: 1.05rem;">2024 和泰智慧移動黑客松企劃提案</h4>
+<h4 style="margin: 0 0 6px 0; color: var(--tech-primary); font-size: 1.05rem;">2024 和泰智慧移動黑客松企劃提案</h4>
 <p style="margin: 4px 0 0 0; font-size: 0.92rem; color: var(--tech-dark);">
 <strong>專案主題：</strong>整合文化信仰與交通服務的一站式智慧導航 APP 企劃
 </p>
@@ -341,7 +343,7 @@ color: var(--tech-gray);
 <hr style="border: 0; border-top: 1px dashed var(--border-line); margin: 20px 0;">
 
 <div>
-<h4 style="margin: 0 0 6px 0; color: var(--tech-black); font-size: 1.05rem;">2026 FineBI × 台灣數據力大賞</h4>
+<h4 style="margin: 0 0 6px 0; color: var(--tech-primary); font-size: 1.05rem;">2026 FineBI × 台灣數據力大賞</h4>
 <p style="margin: 4px 0 0 0; font-size: 0.92rem; color: var(--tech-dark);">
 <strong>專案主題：</strong>全球供應鏈異常預警與自動改道決策系統
 </p>
