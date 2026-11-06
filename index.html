@@ -6,14 +6,16 @@
     <title>李心愉 | 個人專業主頁</title>
     <style>
         :root {
-            /* 科技智庫/數據網絡專屬配色 (對標工研院風格) */
-            --tech-dark: #0f172a;     /* 深石板灰 (西裝與地圖色 - 用於標題，展現極致沉穩) */
-            --tech-cyan: #0ea5e9;     /* 科技青/亮藍 (數據發光連線色 - 用於重點點綴) */
-            --tech-text: #334155;     /* 內文深灰 */
-            --tech-gray: #64748b;     /* 輔助說明中灰 */
-            --bg-page: #f4f5f7;       /* 帶有工業冷調的極淺灰底 */
+            /* 完美對應參考圖的深淺藍配色 */
+            --deep-blue: #0a1128;     /* Image 15: 極深午夜藍 (用於標題、重要內文) */
+            --light-blue: #d0e3f5;    /* Image 16: 柔和淺藍 (用於線條、裝飾) */
+            --border-blue: #abcceb;   /* 稍深一點的淺藍 (用於透明標籤邊框，確保清晰) */
+            
+            --tech-dark: #334155;     /* 深灰 (主要內文) */
+            --tech-gray: #64748b;     /* 中灰 (次要/敘述文字) */
+            --bg-page: #f4f9fd;       /* 帶有極淡淺藍透亮感的整體背景 */
             --card-bg: #ffffff;
-            --border-line: #cbd5e1;   /* 乾淨俐落的邊框灰 */
+            --border-line: #e2e8f0;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -21,7 +23,7 @@
             max-width: 920px;
             margin: 40px auto;
             padding: 0 20px;
-            color: var(--tech-text);
+            color: var(--tech-dark);
             background-color: var(--bg-page);
             -webkit-font-smoothing: antialiased;
         }
@@ -30,7 +32,7 @@
             padding: 40px 48px;
             border-radius: 8px;
             border: 1px solid var(--border-line);
-            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05); /* 輕微高質感陰影 */
+            box-shadow: 0 4px 20px rgba(10, 17, 40, 0.04);
         }
         
         /* 頭部區塊 */
@@ -54,7 +56,7 @@
         .header-info h1 {
             margin: 0 0 8px 0;
             font-size: 1.85rem;
-            color: var(--tech-dark);
+            color: var(--deep-blue);
             letter-spacing: -0.5px;
         }
         .header-info p {
@@ -63,7 +65,7 @@
             font-size: 0.95rem;
         }
         
-        /* 頂部科技感標籤 (深底+螢光字，模擬數據節點) */
+        /* 頂部科技感標籤 (透明感：無底色 + 淺藍邊框) */
         .tags {
             margin-top: 14px;
             display: flex;
@@ -71,21 +73,20 @@
             gap: 8px;
         }
         .tag {
-            background-color: var(--tech-dark);
-            color: #38bdf8; /* 高亮度科技青 */
-            border: 1px solid #1e293b;
+            background-color: transparent; /* 透明底色 */
+            color: var(--deep-blue); /* 深藍字體 */
+            border: 1.5px solid var(--border-blue); /* 淺藍邊框 */
             padding: 3px 12px;
-            border-radius: 4px; 
+            border-radius: 20px; /* 圓潤外框增加輕盈感 */
             font-size: 0.8rem;
-            font-weight: 600;
-            box-shadow: 0 2px 4px rgba(14, 165, 233, 0.1);
+            font-weight: 500;
         }
         
-        /* 區塊標題 (科技亮藍點綴線) */
+        /* 區塊標題 (深藍文字 + 淺藍線條) */
         h2 {
-            color: var(--tech-dark);
+            color: var(--deep-blue);
             font-size: 1.25rem;
-            border-left: 4px solid var(--tech-cyan); /* 發光數據連線色 */
+            border-left: 4px solid var(--border-blue); 
             padding-left: 12px;
             margin-top: 40px;
             margin-bottom: 16px;
@@ -103,7 +104,7 @@
         }
         .card h3 {
             margin-top: 0;
-            color: var(--tech-dark);
+            color: var(--deep-blue);
             font-size: 1.1rem;
             display: flex;
             justify-content: space-between;
@@ -117,11 +118,11 @@
             font-weight: normal;
         }
         
-        /* 進行中 Badge */
+        /* 進行中 Badge (透明感設計) */
         .badge {
-            background: #f0f9ff;
-            color: #0284c7;
-            border: 1px solid #bae6fd;
+            background: transparent;
+            color: var(--deep-blue);
+            border: 1px solid var(--border-blue);
             font-size: 0.75rem;
             font-weight: 600;
             padding: 2px 8px;
@@ -132,14 +133,14 @@
         .exp-item {
             margin-bottom: 14px;
             padding-left: 14px;
-            border-left: 2px solid var(--border-line);
+            border-left: 2px solid var(--light-blue); /* 淺藍色縮排線 */
         }
         .exp-item:last-child {
             margin-bottom: 0;
         }
         .exp-kw {
             font-weight: 600;
-            color: var(--tech-dark);
+            color: var(--deep-blue);
             font-size: 0.95rem;
             margin-bottom: 2px;
         }
@@ -152,14 +153,14 @@
         .card p {
             margin: 8px 0;
             font-size: 0.93rem;
-            color: var(--tech-text);
+            color: var(--tech-dark);
         }
         
         /* 畢業專題專用列點 */
         .simple-list {
             margin: 8px 0 0 0;
             padding-left: 18px;
-            color: var(--tech-text);
+            color: var(--tech-dark);
             font-size: 0.93rem;
         }
         .simple-list li {
@@ -170,7 +171,7 @@
         .role-title {
             font-size: 0.92rem;
             font-weight: 600;
-            color: var(--tech-dark);
+            color: var(--deep-blue);
             margin: 12px 0 6px 0;
         }
         .tech-tags-row {
@@ -178,10 +179,12 @@
             gap: 8px;
             white-space: nowrap; /* 絕對不換行 */
         }
+        
+        /* 右側專案標籤 (透明感：無底色 + 淺藍邊框) */
         .tech-tag {
-            background-color: #f8fafc;
-            color: #0369a1; 
-            border: 1px solid #cbd5e1;
+            background-color: transparent;
+            color: var(--deep-blue); 
+            border: 1px solid var(--border-blue);
             padding: 2px 8px;
             border-radius: 4px;
             font-size: 0.8rem;
@@ -224,13 +227,12 @@
             }
         }
         a {
-            color: var(--tech-cyan);
-            text-decoration: none;
+            color: var(--deep-blue);
+            text-decoration: underline;
             font-weight: 500;
         }
         a:hover {
-            text-decoration: underline;
-            color: #0284c7;
+            color: var(--border-blue);
         }
         .footer {
             text-align: center;
@@ -303,7 +305,7 @@
             <h2>專業證照</h2>
             <div class="card">
                 <div>
-                    <strong style="color: var(--tech-dark); display: block; margin-bottom: 8px;">數位行銷與數據分析</strong>
+                    <strong style="color: var(--deep-blue); display: block; margin-bottom: 8px;">數位行銷與數據分析</strong>
                     <ul class="simple-list" style="margin-top: 0;">
                         <li>Google Analytics (GA4) 認證</li>
                         <li>Google Ads AI 科技輔助購物廣告認證</li>
@@ -312,7 +314,7 @@
                 </div>
                 <hr style="border: 0; border-top: 1px dashed var(--border-line); margin: 20px 0;">
                 <div>
-                    <strong style="color: var(--tech-dark); display: block; margin-bottom: 8px;">商管與內部控制</strong>
+                    <strong style="color: var(--deep-blue); display: block; margin-bottom: 8px;">商管與內部控制</strong>
                     <ul class="simple-list" style="margin-top: 0;">
                         <li>中華民國電腦稽核協會 企業內部控制認證</li>
                         <li>會計事務 - 資訊 丙級技術士</li>
@@ -327,8 +329,8 @@
             <h2>專案經歷</h2>
             <div class="card">
                 <div>
-                    <h4 style="margin: 0 0 6px 0; color: var(--tech-dark); font-size: 1.05rem;">2024 和泰智慧移動黑客松企劃提案</h4>
-                    <p style="margin: 4px 0 0 0; font-size: 0.92rem; color: var(--tech-text);">
+                    <h4 style="margin: 0 0 6px 0; color: var(--deep-blue); font-size: 1.05rem;">2024 和泰智慧移動黑客松企劃提案</h4>
+                    <p style="margin: 4px 0 0 0; font-size: 0.92rem; color: var(--tech-dark);">
                         <strong>專案主題：</strong>整合文化信仰與交通服務的一站式智慧導航 APP 企劃
                     </p>
                     
@@ -344,8 +346,8 @@
                 <hr style="border: 0; border-top: 1px dashed var(--border-line); margin: 20px 0;">
 
                 <div>
-                    <h4 style="margin: 0 0 6px 0; color: var(--tech-dark); font-size: 1.05rem;">2026 FineBI × 台灣數據力大賞</h4>
-                    <p style="margin: 4px 0 0 0; font-size: 0.92rem; color: var(--tech-text);">
+                    <h4 style="margin: 0 0 6px 0; color: var(--deep-blue); font-size: 1.05rem;">2026 FineBI × 台灣數據力大賞</h4>
+                    <p style="margin: 4px 0 0 0; font-size: 0.92rem; color: var(--tech-dark);">
                         <strong>專案主題：</strong>全球供應鏈異常預警與自動改道決策系統
                     </p>
                     
