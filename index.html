@@ -145,4 +145,108 @@
             font-size: 13px;
         }
         .skill ul {
-            margin
+            margin-top: 4px;
+        }
+        .mini-project + .mini-project {
+            margin-top: 19px;
+            padding-top: 17px;
+            border-top: 1px solid #e2e8ed;
+        }
+        .mini-project h3 {
+            font-size: 13px;
+        }
+        .mini-project p {
+            margin: 6px 0;
+        }
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .chips span {
+            font-size: 10px;
+            color: #1684a0;
+            border: 1px solid rgba(22, 132, 160, 0.22);
+            background: rgba(241, 248, 250, 0.6);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        .footer {
+            text-align: center;
+            color: #9aa5ad;
+            font-size: 10px;
+            padding: 25px 0 0;
+        }
+        @media(max-width: 650px) {
+            .wrap {
+                margin: 0;
+                padding: 22px 17px;
+            }
+            .profile {
+                grid-template-columns: 82px 1fr;
+                gap: 14px;
+            }
+            .avatar {
+                width: 80px;
+                height: 108px;
+            }
+            .intro h1 {
+                font-size: 21px;
+            }
+            .intro h1 span {
+                font-size: 15px;
+            }
+            .columns {
+                grid-template-columns: 1fr;
+            }
+            .skill + .skill {
+                margin-top: 24px;
+            }
+            .card {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<main class="wrap">
+    <!-- 個人頭部區塊 -->
+    <div class="profile">
+        <img class="avatar" src="https://avatars.githubusercontent.com/u/cyrrxin7?v=4" onerror="this.src='https://github.com/cyrrxin7.png'" alt="李心愉個人照片">
+        <div class="intro">
+            <h1>李心愉 <span>(Hsin-Yu Li)</span></h1>
+            <p><b>系所：</b>國立臺北大學 數位行銷學士學位學程（預計 2027 畢業）</p>
+            <p><b>學號：</b>311259006</p>
+            <p><b>指導教授：</b>戴敏育 教授</p>
+            <p><b>聯絡方式：</b>omory389520@gmail.com　|　cyrrxin7@gmail.com　|　0968-838-756</p>
+            <p><b>GitHub：</b><a href="https://github.com/cyrrxin7" target="_blank">github.com/cyrrxin7</a></p>
+            <div class="tags">
+                <span>工作流程自動化</span>
+                <span>商業分析 (BA)</span>
+                <span>專案管理 (PM)</span>
+                <span>Agentic AI</span>
+                <span>智財公文數位化</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 專業專題 -->
+    <section id="professional">
+        <h2>專業專題</h2>
+        <article class="card">
+            <div class="card-heading">
+                <h3>MarVoiReflex：結合 Agentic AI 的數位行銷工作流程語音助理</h3>
+                <span class="status">進行中</span>
+            </div>
+            <p><b>專案簡介：</b>針對小型商家社群行銷人員在每週貼文準備時反覆搜尋、比對與整理活動圖片與文案的痛點，以 Windows 本機 Agent 架構結合中文語音辨識、小型語言模型意圖理解與任務規劃模組，落實白名單工具受限操作與搬移前預覽確認機制，協助降低整理耗時與人為分類錯誤。</p>
+            <p><b>個人核心職責與分工：</b></p>
+            <ul>
+                <li><b>需求訪談與痛點分析：</b>深入訪談小型商家與社群運營人員，拆解行銷文案與圖檔整理歸檔的繁瑣流程，轉化為具體系統規格。</li>
+                <li><b>自然語言意圖理解提示詞設計：</b>定義多情境語音指令對應之行銷素材分類標準與系統指令架構。</li>
+                <li><b>商業模式規劃 (BMC) 與簡報統合：</b>主導專案商業價值分析、使用者情境設計與對外評審簡報整合。</li>
+            </ul>
+            <p><b>專案資源：</b></p>
+            <ul>
+                <li><b>程式碼倉庫：</b><a href="https://github.com/yo20ywork-max/MarVoiReflex" target="_blank">github.com/yo20ywork-max
