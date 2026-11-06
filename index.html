@@ -33,11 +33,11 @@
         .role { margin-top: 13px; }
         .role p { margin: 2px 0; }
         
-        /* 左右欄等高對齊核心設定：確保兩張卡片絕對一樣長 */
-        .columns { display: flex; gap: 22px; align-items: stretch; }
-        .col-half { flex: 1; display: flex; flex-direction: column; min-width: 0; }
-        .col-half section { margin-top: 0; display: flex; flex-direction: column; flex: 1; }
-        .col-half .card { flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        /* 左右欄排版與固定最小高度，確保外框視覺絕對一樣長 */
+        .columns { display: flex; gap: 22px; margin-top: 28px; }
+        .col-half { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+        .col-half h2 { margin-top: 0; }
+        .col-half .card { min-height: 410px; display: flex; flex-direction: column; justify-content: space-between; }
         
         .skill + .skill { margin-top: 24px; }
         .skill h3 { font-size: 13px; }
@@ -48,6 +48,7 @@
         .chips { display: flex; flex-wrap: wrap; gap: 6px; }
         .chips span { font-size: 10px; color: #1684a0; border: 1px solid rgba(22, 132, 160, 0.22); background: rgba(241, 248, 250, 0.6); padding: 3px 8px; border-radius: 4px; font-weight: 500; }
         .footer { text-align: center; color: #9aa5ad; font-size: 10px; padding: 25px 0 0; }
+        
         @media(max-width: 650px) {
             .wrap { margin: 0; padding: 22px 17px; }
             .profile { grid-template-columns: 82px 1fr; gap: 14px; }
@@ -55,8 +56,9 @@
             .intro h1 { font-size: 21px; }
             .intro h1 span { font-size: 15px; }
             .columns { flex-direction: column; }
-            .col-half section { margin-top: 28px; }
-            .col-half:first-child section { margin-top: 0; }
+            .col-half { margin-top: 28px; }
+            .col-half:first-child { margin-top: 0; }
+            .col-half .card { min-height: auto; }
             .card { padding: 16px; }
         }
     </style>
@@ -106,7 +108,7 @@
         </article>
     </section>
 
-    <!-- 工作與實務經歷（已移除結尾句號） -->
+    <!-- 工作與實務經歷 -->
     <section id="experience">
         <h2>工作與實務經歷</h2>
         <article class="card">
@@ -129,58 +131,54 @@
         </article>
     </section>
 
-    <!-- 左右雙欄：專業證照與專案經歷（等高對齊） -->
+    <!-- 左右雙欄：專業證照與專案經歷（絕對同高） -->
     <div class="columns">
         <div class="col-half">
-            <section id="skills">
-                <h2>專業證照</h2>
-                <article class="card">
-                    <div class="skill">
-                        <h3>數位行銷與數據分析</h3>
-                        <ul>
-                            <li>Google Analytics (GA4) 認證</li>
-                            <li>Google Ads AI 科技輔助購物廣告認證</li>
-                            <li>Kaggle Python 認證</li>
-                        </ul>
-                    </div>
-                    <div class="skill" style="margin-top: 24px;">
-                        <h3>商管與內部控制</h3>
-                        <ul>
-                            <li>中華民國電腦稽核協會 企業內部控制認證</li>
-                            <li>會計事務 - 資訊 丙級技術士</li>
-                            <li>電子商務概論 實用級</li>
-                        </ul>
-                    </div>
-                </article>
-            </section>
+            <h2>專業證照</h2>
+            <article class="card">
+                <div class="skill">
+                    <h3>數位行銷與數據分析</h3>
+                    <ul>
+                        <li>Google Analytics (GA4) 認證</li>
+                        <li>Google Ads AI 科技輔助購物廣告認證</li>
+                        <li>Kaggle Python 認證</li>
+                    </ul>
+                </div>
+                <div class="skill" style="margin-top: 24px;">
+                    <h3>商管與內部控制</h3>
+                    <ul>
+                        <li>中華民國電腦稽核協會 企業內部控制認證</li>
+                        <li>會計事務 - 資訊 丙級技術士</li>
+                        <li>電子商務概論 實用級</li>
+                    </ul>
+                </div>
+            </article>
         </div>
 
         <div class="col-half">
-            <section id="projects">
-                <h2>專案經歷</h2>
-                <article class="card">
-                    <div class="mini-project" style="margin-top: 0; padding-top: 0; border-top: none;">
-                        <h3>2024 和泰智慧移動黑客松企劃提案</h3>
-                        <p><b>專案主題：</b>整合文化信仰與交通服務的一站式智慧導航 APP 企劃。</p>
-                        <p><b>個人負責項目：</b></p>
-                        <div class="chips">
-                            <span>客群需求調研</span>
-                            <span>競品痛點分析</span>
-                            <span>商業創新企劃</span>
-                        </div>
+            <h2>專案經歷</h2>
+            <article class="card">
+                <div class="mini-project" style="margin-top: 0; padding-top: 0; border-top: none;">
+                    <h3>2024 和泰智慧移動黑客松企劃提案</h3>
+                    <p><b>專案主題：</b>整合文化信仰與交通服務的一站式智慧導航 APP 企劃。</p>
+                    <p><b>個人負責項目：</b></p>
+                    <div class="chips">
+                        <span>客群需求調研</span>
+                        <span>競品痛點分析</span>
+                        <span>商業創新企劃</span>
                     </div>
-                    <div class="mini-project">
-                        <h3>2026 FineBI × 台灣數據力大賞</h3>
-                        <p><b>專案主題：</b>全球供應鏈異常預警與自動改道決策系統。</p>
-                        <p><b>個人負責項目：</b></p>
-                        <div class="chips">
-                            <span>風險應變流程規劃</span>
-                            <span>極端情境模擬推演</span>
-                            <span>商業價值分析</span>
-                        </div>
+                </div>
+                <div class="mini-project">
+                    <h3>2026 FineBI × 台灣數據力大賞</h3>
+                    <p><b>專案主題：</b>全球供應鏈異常預警與自動改道決策系統。</p>
+                    <p><b>個人負責項目：</b></p>
+                    <div class="chips">
+                        <span>風險應變流程規劃</span>
+                        <span>極端情境模擬推演</span>
+                        <span>商業價值分析</span>
                     </div>
-                </article>
-            </section>
+                </div>
+            </article>
         </div>
     </div>
 
