@@ -3,102 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>李心愉 (Hsin-Yu Li) | 個人首頁</title>
+    <title>李心愉 (Hsin-Yu Li) | 個人學術與專案首頁</title>
     <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --secondary: #0f766e;
+            --text-main: #1f2937;
+            --text-sub: #4b5563;
+            --bg-page: #f8fafc;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
-            max-width: 860px;
-            margin: 20px auto;
-            padding: 0 16px;
-            color: #2c3e50;
-            background-color: #fafbfc;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+            color: var(--text-main);
+            background-color: var(--bg-page);
         }
         .container {
-            background: #ffffff;
-            padding: 24px;
-            border-radius: 12px;
-            border: 1px solid #e1e4e8;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+            background: var(--card-bg);
+            padding: 36px 40px;
+            border-radius: 14px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
         }
         .header {
             display: flex;
             align-items: center;
-            gap: 20px;
-            border-bottom: 2px solid #eaecef;
-            padding-bottom: 20px;
-            margin-bottom: 24px;
+            gap: 28px;
+            border-bottom: 2px solid #edf2f7;
+            padding-bottom: 24px;
+            margin-bottom: 28px;
         }
         .profile-photo {
-            width: 110px;
-            height: 145px;
+            width: 125px;
+            height: 160px;
             object-fit: cover;
-            border-radius: 8px;
-            border: 1px solid #e1e4e8;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
             flex-shrink: 0;
         }
         .header-info h1 {
             margin: 0 0 6px 0;
-            font-size: 1.5rem;
-            color: #1a202c;
+            font-size: 1.85rem;
+            color: var(--primary);
         }
         .header-info p {
             margin: 4px 0;
-            color: #4a5568;
-            font-size: 0.9rem;
+            color: var(--text-sub);
+            font-size: 0.95rem;
         }
         .tags {
-            margin-top: 10px;
+            margin-top: 12px;
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
+            gap: 8px;
         }
         .tag {
-            background-color: #edf2f7;
-            color: #2d3748;
-            padding: 3px 8px;
-            border-radius: 12px;
+            background-color: #eff6ff;
+            color: var(--primary-light);
+            border: 1px solid #dbeafe;
+            padding: 3px 10px;
+            border-radius: 14px;
             font-size: 0.8rem;
-            font-weight: 500;
+            font-weight: 600;
         }
         h2 {
-            color: #2b6cb0;
-            font-size: 1.2rem;
-            border-left: 4px solid #3182ce;
-            padding-left: 8px;
-            margin-top: 24px;
-            margin-bottom: 12px;
+            color: var(--primary);
+            font-size: 1.25rem;
+            border-left: 4px solid var(--primary-light);
+            padding-left: 10px;
+            margin-top: 32px;
+            margin-bottom: 16px;
         }
         .card {
-            background: #f7fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 16px;
-            margin-bottom: 16px;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 22px;
+            margin-bottom: 18px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
         }
         .card h3 {
             margin-top: 0;
-            color: #2d3748;
-            font-size: 1.05rem;
+            color: #1e293b;
+            font-size: 1.15rem;
+        }
+        .badge {
+            background: #e0f2fe;
+            color: #0369a1;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 6px;
+            margin-left: 6px;
         }
         .card p {
-            margin: 6px 0;
-            font-size: 0.9rem;
-            color: #4a5568;
+            margin: 8px 0;
+            font-size: 0.95rem;
+            color: var(--text-sub);
+            text-align: justify;
         }
         ul {
-            margin: 6px 0;
-            padding-left: 18px;
-            color: #4a5568;
-            font-size: 0.9rem;
+            margin: 8px 0;
+            padding-left: 20px;
+            color: var(--text-sub);
+            font-size: 0.95rem;
         }
         li {
-            margin-bottom: 4px;
+            margin-bottom: 6px;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        @media (max-width: 650px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .tags {
+                justify-content: center;
+            }
         }
         a {
-            color: #3182ce;
+            color: var(--primary-light);
             text-decoration: none;
             font-weight: 500;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: #94a3b8;
         }
     </style>
 </head>
@@ -106,49 +155,78 @@
 
 <div class="container">
     <div class="header">
-        <img class="profile-photo" src="https://github.com/cyrrxin7.png" alt="李心愉 大頭照">
+        <img class="profile-photo" src="https://github.com/cyrrxin7.png" alt="李心愉">
         <div class="header-info">
             <h1>李心愉 (Hsin-Yu Li)</h1>
             <p><strong>系所：</strong>國立臺北大學 數位行銷學士學位學程（四年級）</p>
+            <p><strong>學號：</strong>311259006</p>
             <p><strong>指導教授：</strong>戴敏育 教授 (Prof. Min-Yuh Day)</p>
             <p><strong>聯絡方式：</strong>cyrrxin7@gmail.com</p>
-            <p><strong>個人檔案：</strong><a href="https://github.com/cyrrxin7" target="_blank">GitHub Profile</a></p>
+            <p><strong>GitHub：</strong><a href="https://github.com/cyrrxin7" target="_blank">github.com/cyrrxin7</a></p>
             <div class="tags">
                 <span class="tag">數位行銷</span>
                 <span class="tag">Agentic AI</span>
-                <span class="tag">中文語音助理</span>
                 <span class="tag">工作流程自動化</span>
-                <span class="tag">商業分析</span>
+                <span class="tag">商業分析 (BA)</span>
+                <span class="tag">專案管理 (PM)</span>
             </div>
         </div>
     </div>
 
     <h2>畢業專題 / Capstone Project</h2>
     <div class="card">
-        <h3>MarVoiReflex：結合 Agentic AI 的數位行銷工作流程語音助理</h3>
+        <h3>MarVoiReflex：結合 Agentic AI 的數位行銷工作流程語音助理 <span class="badge">進行中</span></h3>
         <p><strong>專案簡介：</strong>針對小型商家社群行銷人員在每週貼文準備時反覆搜尋、比對與整理活動圖片與文案的痛點，以 Windows 本機 Agent 架構結合中文語音辨識、小型語言模型意圖理解與任務規劃模組，落實白名單工具受限操作與搬移前預覽確認機制，協助降低整理耗時與人為分類錯誤。</p>
         
-        <p><strong>團隊個人分工：</strong></p>
+        <p><strong>個人核心職責與分工：</strong></p>
         <ul>
-            <li>使用者需求訪談與問題分析（鎖定小型商家社群行銷情境）</li>
-            <li>行銷素材指令意圖理解與提示詞設計</li>
-            <li>專案研究資料整理與商業模式規劃 (BMC)</li>
+            <li><strong>需求訪談與痛點分析：</strong>深訪小型商家與社群運營人員，拆解行銷文案與圖檔歸檔的繁瑣流程，轉化為系統需求。</li>
+            <li><strong>自然語言意圖理解提示詞設計：</strong>定義語音指令對應之行銷素材分類標準與 Prompt 架構。</li>
+            <li><strong>商業模式規劃 (BMC) 與簡報統籌：</strong>負責專案商業價值分析、使用者情境設計與評審簡報整合。</li>
         </ul>
 
-        <p><strong>專案資源：</strong></p>
+        <p><strong>專案專屬資源：</strong></p>
         <ul>
             <li><strong>專案程式碼倉庫：</strong> <a href="https://github.com/yo20ywork-max/MarVoiReflex" target="_blank">github.com/yo20ywork-max/MarVoiReflex</a></li>
-            <li><strong>專題成果網站：</strong> 建置中（即將上線）</li>
+            <li><strong>專案成果簡報：</strong> 簡報展示與展示站點陸續更新中</li>
         </ul>
     </div>
 
-    <h2>研究興趣與核心技能</h2>
-    <div class="card">
-        <ul>
-            <li><strong>研究關注：</strong> 人機互動介面 (Human-AI Interaction)、AI Agent 工作流程整合、社群行銷自動化</li>
-            <li><strong>分析與企劃：</strong> 商業模式畫布 (BMC)、使用者訪談與質性分析、需求規格定義 (PRD)</li>
-            <li><strong>數位工具與認證：</strong> GA4 認證、Google Ads 相關認證、Git / GitHub 專案協作</li>
-        </ul>
+    <div class="grid-2">
+        <div class="card">
+            <h3>專案競賽與提案經歷</h3>
+            <ul>
+                <li><strong>2026 FineBI × 台灣數據力大賞</strong><br>
+                    <span style="font-size: 0.85rem; color: #64748b;">隊名：「數」戰「數」決｜題目：韌性指揮官</span></li>
+                <li><strong>2024 和泰 MaaS 黑客松企劃提案</strong><br>
+                    <span style="font-size: 0.85rem; color: #64748b;">智慧移動與商業模式創新應用企劃</span></li>
+                <li><strong>品牌公關策略分析個案研究</strong><br>
+                    <span style="font-size: 0.85rem; color: #64748b;">泡泡瑪特 (POP MART) 品牌行銷與公關策略剖析</span></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>專業證照與技能核心</h3>
+            <ul>
+                <li><strong>數位行銷與廣告認證：</strong>
+                    <ul>
+                        <li>Google Analytics 4 (GA4) 認證</li>
+                        <li>Google Ads AI 科技輔助購物廣告認證</li>
+                        <li>電子商務概論 實用級</li>
+                    </ul>
+                </li>
+                <li><strong>商管與內部控制認證：</strong>
+                    <ul>
+                        <li>中華民國電腦稽核協會 企業內部控制認證</li>
+                        <li>會計事務-資訊 丙級技術士</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 李心愉 (Hsin-Yu Li) | 國立臺北大學 數位行銷學士學位學程</p>
     </div>
 </div>
 
