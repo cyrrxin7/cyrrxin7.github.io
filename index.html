@@ -7,8 +7,7 @@
     <style>
         :root {
             --primary: #1e3a8a;
-            --primary-light: #3b82f6;
-            --secondary: #0f766e;
+            --primary-light: #2563eb;
             --text-main: #1f2937;
             --text-sub: #4b5563;
             --bg-page: #f8fafc;
@@ -18,7 +17,7 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
-            max-width: 900px;
+            max-width: 920px;
             margin: 30px auto;
             padding: 0 20px;
             color: var(--text-main);
@@ -27,7 +26,7 @@
         .container {
             background: var(--card-bg);
             padding: 36px 40px;
-            border-radius: 14px;
+            border-radius: 12px;
             border: 1px solid var(--border-color);
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
         }
@@ -59,176 +58,4 @@
             font-size: 0.95rem;
         }
         .tags {
-            margin-top: 12px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .tag {
-            background-color: #eff6ff;
-            color: var(--primary-light);
-            border: 1px solid #dbeafe;
-            padding: 3px 10px;
-            border-radius: 14px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-        h2 {
-            color: var(--primary);
-            font-size: 1.25rem;
-            border-left: 4px solid var(--primary-light);
-            padding-left: 10px;
-            margin-top: 32px;
-            margin-bottom: 16px;
-        }
-        .card {
-            background: #ffffff;
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 22px;
-            margin-bottom: 18px;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
-        }
-        .card h3 {
-            margin-top: 0;
-            color: #1e293b;
-            font-size: 1.15rem;
-        }
-        .badge {
-            background: #e0f2fe;
-            color: #0369a1;
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 2px 8px;
-            border-radius: 6px;
-            margin-left: 6px;
-        }
-        .card p {
-            margin: 8px 0;
-            font-size: 0.95rem;
-            color: var(--text-sub);
-            text-align: justify;
-        }
-        ul {
-            margin: 8px 0;
-            padding-left: 20px;
-            color: var(--text-sub);
-            font-size: 0.95rem;
-        }
-        li {
-            margin-bottom: 6px;
-        }
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-        @media (max-width: 650px) {
-            .grid-2 {
-                grid-template-columns: 1fr;
-            }
-            .header {
-                flex-direction: column;
-                text-align: center;
-            }
-            .tags {
-                justify-content: center;
-            }
-        }
-        a {
-            color: var(--primary-light);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 0.85rem;
-            color: #94a3b8;
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <div class="header">
-        <img class="profile-photo" src="https://github.com/cyrrxin7.png" alt="李心愉">
-        <div class="header-info">
-            <h1>李心愉 (Hsin-Yu Li)</h1>
-            <p><strong>系所：</strong>國立臺北大學 數位行銷學士學位學程（四年級）</p>
-            <p><strong>學號：</strong>311259006</p>
-            <p><strong>指導教授：</strong>戴敏育 教授 (Prof. Min-Yuh Day)</p>
-            <p><strong>聯絡方式：</strong>cyrrxin7@gmail.com</p>
-            <p><strong>GitHub：</strong><a href="https://github.com/cyrrxin7" target="_blank">github.com/cyrrxin7</a></p>
-            <div class="tags">
-                <span class="tag">數位行銷</span>
-                <span class="tag">Agentic AI</span>
-                <span class="tag">工作流程自動化</span>
-                <span class="tag">商業分析 (BA)</span>
-                <span class="tag">專案管理 (PM)</span>
-            </div>
-        </div>
-    </div>
-
-    <h2>畢業專題 / Capstone Project</h2>
-    <div class="card">
-        <h3>MarVoiReflex：結合 Agentic AI 的數位行銷工作流程語音助理 <span class="badge">進行中</span></h3>
-        <p><strong>專案簡介：</strong>針對小型商家社群行銷人員在每週貼文準備時反覆搜尋、比對與整理活動圖片與文案的痛點，以 Windows 本機 Agent 架構結合中文語音辨識、小型語言模型意圖理解與任務規劃模組，落實白名單工具受限操作與搬移前預覽確認機制，協助降低整理耗時與人為分類錯誤。</p>
-        
-        <p><strong>個人核心職責與分工：</strong></p>
-        <ul>
-            <li><strong>需求訪談與痛點分析：</strong>深訪小型商家與社群運營人員，拆解行銷文案與圖檔歸檔的繁瑣流程，轉化為系統需求。</li>
-            <li><strong>自然語言意圖理解提示詞設計：</strong>定義語音指令對應之行銷素材分類標準與 Prompt 架構。</li>
-            <li><strong>商業模式規劃 (BMC) 與簡報統籌：</strong>負責專案商業價值分析、使用者情境設計與評審簡報整合。</li>
-        </ul>
-
-        <p><strong>專案專屬資源：</strong></p>
-        <ul>
-            <li><strong>專案程式碼倉庫：</strong> <a href="https://github.com/yo20ywork-max/MarVoiReflex" target="_blank">github.com/yo20ywork-max/MarVoiReflex</a></li>
-            <li><strong>專案成果簡報：</strong> 簡報展示與展示站點陸續更新中</li>
-        </ul>
-    </div>
-
-    <div class="grid-2">
-        <div class="card">
-            <h3>專案競賽與提案經歷</h3>
-            <ul>
-                <li><strong>2026 FineBI × 台灣數據力大賞</strong><br>
-                    <span style="font-size: 0.85rem; color: #64748b;">隊名：「數」戰「數」決｜題目：韌性指揮官</span></li>
-                <li><strong>2024 和泰 MaaS 黑客松企劃提案</strong><br>
-                    <span style="font-size: 0.85rem; color: #64748b;">智慧移動與商業模式創新應用企劃</span></li>
-                <li><strong>品牌公關策略分析個案研究</strong><br>
-                    <span style="font-size: 0.85rem; color: #64748b;">泡泡瑪特 (POP MART) 品牌行銷與公關策略剖析</span></li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>專業證照與技能核心</h3>
-            <ul>
-                <li><strong>數位行銷與廣告認證：</strong>
-                    <ul>
-                        <li>Google Analytics 4 (GA4) 認證</li>
-                        <li>Google Ads AI 科技輔助購物廣告認證</li>
-                        <li>電子商務概論 實用級</li>
-                    </ul>
-                </li>
-                <li><strong>商管與內部控制認證：</strong>
-                    <ul>
-                        <li>中華民國電腦稽核協會 企業內部控制認證</li>
-                        <li>會計事務-資訊 丙級技術士</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="footer">
-        <p>© 2026 李心愉 (Hsin-Yu Li) | 國立臺北大學 數位行銷學士學位學程</p>
-    </div>
-</div>
-
-</body>
-</html>
+            
