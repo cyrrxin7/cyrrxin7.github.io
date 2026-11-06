@@ -33,11 +33,11 @@
         .role { margin-top: 13px; }
         .role p { margin: 2px 0; }
         
-        /* 左右欄排版與固定最小高度，確保外框視覺絕對一樣長 */
-        .columns { display: flex; gap: 22px; margin-top: 28px; }
-        .col-half { flex: 1; min-width: 0; display: flex; flex-direction: column; }
-        .col-half h2 { margin-top: 0; }
-        .col-half .card { min-height: 410px; display: flex; flex-direction: column; justify-content: space-between; }
+        /* 左右欄強制百分之百等高設定 */
+        .columns { display: flex; gap: 22px; align-items: stretch; margin-top: 28px; }
+        .col-half { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+        .col-half h2 { margin-top: 0; margin-bottom: 13px; }
+        .col-half .card { flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
         
         .skill + .skill { margin-top: 24px; }
         .skill h3 { font-size: 13px; }
@@ -58,7 +58,7 @@
             .columns { flex-direction: column; }
             .col-half { margin-top: 28px; }
             .col-half:first-child { margin-top: 0; }
-            .col-half .card { min-height: auto; }
+            .col-half .card { flex: unset; }
             .card { padding: 16px; }
         }
     </style>
@@ -103,90 +103,4 @@
             </ul>
             <p><b>專案資源：</b></p>
             <ul>
-                <li><b>程式碼倉庫：</b><a href="https://github.com/yo20ywork-max/MarVoiReflex" target="_blank">github.com/yo20ywork-max/MarVoiReflex</a></li>
-            </ul>
-        </article>
-    </section>
-
-    <!-- 工作與實務經歷 -->
-    <section id="experience">
-        <h2>工作與實務經歷</h2>
-        <article class="card">
-            <div class="card-heading">
-                <h3>長春人造樹脂廠股份有限公司｜產品標準部 工讀生</h3>
-                <span class="date">2023 - 至今</span>
-            </div>
-            <div class="role">
-                <b>【智財資產生命週期管理】</b>
-                <p>統籌跨國專利規費之流程控管、生命週期數位化追蹤與銷帳作業，落實合規與零逾期目標</p>
-            </div>
-            <div class="role">
-                <b>【跨部門公文流轉管考】</b>
-                <p>主導四大核心部門間之公文字表審查、流轉進度追蹤與內部簽核時限控管，優化行政協同效率</p>
-            </div>
-            <div class="role">
-                <b>【合規稽核與專案協調】</b>
-                <p>協辦年度專案查檢作業、合規稽核管制執行，以及跨部門專案公文事務之對外協調整合</p>
-            </div>
-        </article>
-    </section>
-
-    <!-- 左右雙欄：專業證照與專案經歷（絕對同高） -->
-    <div class="columns">
-        <div class="col-half">
-            <h2>專業證照</h2>
-            <article class="card">
-                <div class="skill">
-                    <h3>數位行銷與數據分析</h3>
-                    <ul>
-                        <li>Google Analytics (GA4) 認證</li>
-                        <li>Google Ads AI 科技輔助購物廣告認證</li>
-                        <li>Kaggle Python 認證</li>
-                    </ul>
-                </div>
-                <div class="skill" style="margin-top: 24px;">
-                    <h3>商管與內部控制</h3>
-                    <ul>
-                        <li>中華民國電腦稽核協會 企業內部控制認證</li>
-                        <li>會計事務 - 資訊 丙級技術士</li>
-                        <li>電子商務概論 實用級</li>
-                    </ul>
-                </div>
-            </article>
-        </div>
-
-        <div class="col-half">
-            <h2>專案經歷</h2>
-            <article class="card">
-                <div class="mini-project" style="margin-top: 0; padding-top: 0; border-top: none;">
-                    <h3>2024 和泰智慧移動黑客松企劃提案</h3>
-                    <p><b>專案主題：</b>整合文化信仰與交通服務的一站式智慧導航 APP 企劃。</p>
-                    <p><b>個人負責項目：</b></p>
-                    <div class="chips">
-                        <span>客群需求調研</span>
-                        <span>競品痛點分析</span>
-                        <span>商業創新企劃</span>
-                    </div>
-                </div>
-                <div class="mini-project">
-                    <h3>2026 FineBI × 台灣數據力大賞</h3>
-                    <p><b>專案主題：</b>全球供應鏈異常預警與自動改道決策系統。</p>
-                    <p><b>個人負責項目：</b></p>
-                    <div class="chips">
-                        <span>風險應變流程規劃</span>
-                        <span>極端情境模擬推演</span>
-                        <span>商業價值分析</span>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </div>
-
-    <!-- 頁腳 -->
-    <div class="footer">
-        李心愉｜個人履歷與專案作品集
-    </div>
-</main>
-
-</body>
-</html>
+                <li><b>程式碼倉庫：</b>
