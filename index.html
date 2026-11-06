@@ -7,55 +7,217 @@
     <title>李心愉｜個人履歷與專案作品集</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * { box-sizing: border-box; }
-        body { margin: 0; background: #f4f6f8; color: #253342; font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif; line-height: 1.75; font-size: 14px; }
-        a { color: #1684a0; text-decoration: none; overflow-wrap: anywhere; }
-        .wrap { max-width: 940px; margin: 30px auto; padding: 30px 34px; background: #fff; box-shadow: 0 8px 30px #1c344010; }
-        .profile { display: grid; grid-template-columns: 112px 1fr; gap: 24px; align-items: center; padding: 0 0 25px; border-bottom: 1px solid #cfd8df; }
-        .avatar { width: 108px; height: 140px; object-fit: cover; border: 1px solid #cbd4dc; padding: 3px; }
-        .intro h1 { font-size: 27px; margin: 0 0 8px; color: #253342; }
-        .intro h1 span { font-size: 21px; color: #536779; }
-        .intro p { font-size: 12px; margin: 2px 0; color: #53616e; }
-        .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 13px; }
-        .tags span { background: rgba(22, 132, 160, 0.05); color: #1684a0; border: 1px solid rgba(22, 132, 160, 0.25); padding: 4px 11px; font-size: 11px; border-radius: 4px; font-weight: 500; }
-        section { margin-top: 28px; }
-        h2 { font-size: 18px; margin: 0 0 13px; padding-left: 12px; border-left: 4px solid #168da4; color: #253342; }
-        h3 { font-size: 15px; margin: 0; color: #253342; }
-        .card { border: 1px solid #d6dfe5; border-radius: 5px; padding: 20px 22px; background: #fff; }
-        .card p, .card li { font-size: 12px; color: #5b6874; }
-        .card p { margin: 9px 0; }
-        .card ul { padding-left: 19px; margin: 6px 0; }
-        .card li { padding: 2px 0; }
-        .card-heading { display: flex; justify-content: space-between; gap: 12px; align-items: center; flex-wrap: wrap; }
-        .status { font-size: 11px; color: #18758a; background: #e6f3f5; padding: 3px 10px; border: 1px solid #c8e5e9; }
-        .date { font-size: 11px; color: #82909b; }
-        .role { margin-top: 13px; }
-        .role p { margin: 2px 0; }
-        .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
-        .skill + .skill { margin-top: 62px; }
-        .skill h3 { font-size: 13px; }
-        .skill ul { margin-top: 4px; }
-        .mini-project + .mini-project { margin-top: 19px; padding-top: 17px; border-top: 1px solid #e2e8ed; }
-        .mini-project h3 { font-size: 13px; }
-        .mini-project p { margin: 6px 0; }
-        .chips { display: flex; flex-wrap: wrap; gap: 6px; }
-        .chips span { font-size: 10px; color: #1684a0; border: 1px solid rgba(22, 132, 160, 0.22); background: rgba(241, 248, 250, 0.6); padding: 3px 8px; border-radius: 4px; font-weight: 500; }
-        .footer { text-align: center; color: #9aa5ad; font-size: 10px; padding: 25px 0 0; }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            background: #f4f6f8;
+            color: #253342;
+            font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+            line-height: 1.75;
+            font-size: 14px;
+        }
+        a {
+            color: #1684a0;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+        /* 電話號碼維持一般文字顏色，不變色、無裝飾 */
+        .phone-text {
+            color: #53616e;
+            text-decoration: none;
+        }
+        .wrap {
+            max-width: 940px;
+            margin: 30px auto;
+            padding: 30px 34px;
+            background: #fff;
+            box-shadow: 0 8px 30px #1c344010;
+        }
+        .profile {
+            display: grid;
+            grid-template-columns: 112px 1fr;
+            gap: 24px;
+            align-items: center;
+            padding: 0 0 25px;
+            border-bottom: 1px solid #cfd8df;
+        }
+        .avatar {
+            width: 108px;
+            height: 140px;
+            object-fit: cover;
+            border: 1px solid #cbd4dc;
+            padding: 3px;
+        }
+        .intro h1 {
+            font-size: 27px;
+            margin: 0 0 8px;
+            color: #253342;
+        }
+        .intro h1 span {
+            font-size: 21px;
+            color: #536779;
+        }
+        .intro p {
+            font-size: 12px;
+            margin: 2px 0;
+            color: #53616e;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-top: 13px;
+        }
+        .tags span {
+            background: rgba(22, 132, 160, 0.05);
+            color: #1684a0;
+            border: 1px solid rgba(22, 132, 160, 0.25);
+            padding: 4px 11px;
+            font-size: 11px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        section {
+            margin-top: 28px;
+        }
+        h2 {
+            font-size: 18px;
+            margin: 0 0 13px;
+            padding-left: 12px;
+            border-left: 4px solid #168da4;
+            color: #253342;
+        }
+        h3 {
+            font-size: 15px;
+            margin: 0;
+            color: #253342;
+        }
+        .card {
+            border: 1px solid #d6dfe5;
+            border-radius: 5px;
+            padding: 20px 22px;
+            background: #fff;
+        }
+        .card p, .card li {
+            font-size: 12px;
+            color: #5b6874;
+        }
+        .card p {
+            margin: 9px 0;
+        }
+        .card ul {
+            padding-left: 19px;
+            margin: 6px 0;
+        }
+        .card li {
+            padding: 2px 0;
+        }
+        .card-heading {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .status {
+            font-size: 11px;
+            color: #18758a;
+            background: #e6f3f5;
+            padding: 3px 10px;
+            border: 1px solid #c8e5e9;
+        }
+        .date {
+            font-size: 11px;
+            color: #82909b;
+        }
+        .role {
+            margin-top: 13px;
+        }
+        .role p {
+            margin: 2px 0;
+        }
+        .columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+        .skill + .skill {
+            margin-top: 32px;
+        }
+        .skill h3 {
+            font-size: 13px;
+        }
+        .skill ul {
+            margin-top: 4px;
+        }
+        .mini-project + .mini-project {
+            margin-top: 19px;
+            padding-top: 17px;
+            border-top: 1px solid #e2e8ed;
+        }
+        .mini-project h3 {
+            font-size: 13px;
+        }
+        .mini-project p {
+            margin: 6px 0;
+        }
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .chips span {
+            font-size: 10px;
+            color: #1684a0;
+            border: 1px solid rgba(22, 132, 160, 0.22);
+            background: rgba(241, 248, 250, 0.6);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        .footer {
+            text-align: center;
+            color: #9aa5ad;
+            font-size: 10px;
+            padding: 25px 0 0;
+        }
         @media(max-width: 650px) {
-            .wrap { margin: 0; padding: 22px 17px; }
-            .profile { grid-template-columns: 82px 1fr; gap: 14px; }
-            .avatar { width: 80px; height: 108px; }
-            .intro h1 { font-size: 21px; }
-            .intro h1 span { font-size: 15px; }
-            .columns { grid-template-columns: 1fr; }
-            .skill + .skill { margin-top: 24px; }
-            .card { padding: 16px; }
+            .wrap {
+                margin: 0;
+                padding: 22px 17px;
+            }
+            .profile {
+                grid-template-columns: 82px 1fr;
+                gap: 14px;
+            }
+            .avatar {
+                width: 80px;
+                height: 108px;
+            }
+            .intro h1 {
+                font-size: 21px;
+            }
+            .intro h1 span {
+                font-size: 15px;
+            }
+            .columns {
+                grid-template-columns: 1fr;
+            }
+            .skill + .skill {
+                margin-top: 24px;
+            }
+            .card {
+                padding: 16px;
+            }
         }
     </style>
 </head>
 <body>
 
 <main class="wrap">
+    <!-- 個人頭部區塊 -->
     <div class="profile">
         <img class="avatar" src="https://github.com/cyrrxin7.png" alt="李心愉個人照片">
         <div class="intro">
@@ -63,7 +225,7 @@
             <p><b>系所：</b>國立臺北大學 數位行銷學士學位學程（預計 2027 畢業）</p>
             <p><b>學號：</b>311259006</p>
             <p><b>指導教授：</b>戴敏育 教授</p>
-            <p><b>聯絡方式：</b>omory389520@gmail.com　|　cyrrxin7@gmail.com　|　0968-838-756</p>
+            <p><b>聯絡方式：</b>omory389520@gmail.com　|　cyrrxin7@gmail.com　|　<span class="phone-text">0968-838-756</span></p>
             <p><b>GitHub：</b><a href="https://github.com/cyrrxin7" target="_blank">github.com/cyrrxin7</a></p>
             <div class="tags">
                 <span>工作流程自動化</span>
@@ -75,6 +237,7 @@
         </div>
     </div>
 
+    <!-- 專業專題 -->
     <section id="professional">
         <h2>專業專題</h2>
         <article class="card">
@@ -96,6 +259,7 @@
         </article>
     </section>
 
+    <!-- 工作與實務經歷 -->
     <section id="experience">
         <h2>工作與實務經歷</h2>
         <article class="card">
@@ -118,6 +282,7 @@
         </article>
     </section>
 
+    <!-- 左右雙欄：專業證照與專案經歷 -->
     <div class="columns">
         <section id="skills">
             <h2>專業證照</h2>
@@ -130,7 +295,7 @@
                         <li>Kaggle Python 認證</li>
                     </ul>
                 </div>
-                <div class="skill">
+                <div class="skill" style="margin-top: 24px;">
                     <h3>商管與內部控制</h3>
                     <ul>
                         <li>中華民國電腦稽核協會 企業內部控制認證</li>
@@ -144,7 +309,7 @@
         <section id="projects">
             <h2>專案經歷</h2>
             <article class="card">
-                <div class="mini-project">
+                <div class="mini-project" style="margin-top: 0; padding-top: 0; border-top: none;">
                     <h3>2024 和泰智慧移動黑客松企劃提案</h3>
                     <p><b>專案主題：</b>整合文化信仰與交通服務的一站式智慧導航 APP 企劃。</p>
                     <p><b>個人負責項目：</b></p>
@@ -168,6 +333,7 @@
         </section>
     </div>
 
+    <!-- 頁腳 -->
     <div class="footer">
         李心愉｜個人履歷與專案作品集
     </div>
