@@ -87,6 +87,7 @@ border-radius: 10px;
 padding: 20px 24px;
 margin-bottom: 18px;
 box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+box-sizing: border-box;
 }
 .card h3 {
 margin-top: 0;
@@ -126,13 +127,22 @@ li {
 margin-bottom: 6px;
 }
 .grid-2 {
-display: grid;
-grid-template-columns: 1fr 1fr;
+display: flex;
 gap: 18px;
+align-items: stretch;
+}
+.col-half {
+flex: 1;
+display: flex;
+flex-direction: column;
+}
+.col-half .card {
+flex: 1;
+margin-bottom: 0;
 }
 @media (max-width: 768px) {
 .grid-2 {
-grid-template-columns: 1fr;
+flex-direction: column;
 }
 .header {
 flex-direction: column;
@@ -206,9 +216,10 @@ color: #94a3b8;
 </ul>
 </div>
 
+<!-- 左右等長卡片區域 -->
 <div class="grid-2">
 <!-- 左側：專業證照 -->
-<div>
+<div class="col-half">
 <h2>專業證照</h2>
 <div class="card">
 <strong style="color: #1e3a8a; display: block; margin-bottom: 6px;">數位行銷與數據分析</strong>
@@ -217,7 +228,7 @@ color: #94a3b8;
 <li>Google Ads AI 科技輔助購物廣告認證</li>
 <li>Kaggle Python 認證</li>
 </ul>
-<hr style="border: 0; border-top: 1px dashed #e2e8f0; margin: 14px 0;">
+<hr style="border: 0; border-top: 1px dashed #e2e8f0; margin: 16px 0;">
 <strong style="color: #1e3a8a; display: block; margin-bottom: 6px;">商管與內部控制</strong>
 <ul>
 <li>中華民國電腦稽核協會 企業內部控制認證</li>
@@ -228,23 +239,25 @@ color: #94a3b8;
 </div>
 
 <!-- 右側：校外比賽經驗 -->
-<div>
+<div class="col-half">
 <h2>校外比賽經驗</h2>
 <div class="card">
-<h4 style="margin: 0 0 6px 0; color: #1e293b; font-size: 1.05rem;">2024 和泰 MaaS 黑客松：移動新體驗、想像無極限</h4>
+<h4 style="margin: 0 0 6px 0; color: #1e293b; font-size: 1.05rem;">2024 和泰 MaaS 黑客松</h4>
+<p style="margin: 2px 0 6px 0; font-size: 0.88rem; color: #2563eb; font-weight: 600;">專案主題：文化信仰智慧導航（二元一次方程組）</p>
+<p style="margin: 2px 0 6px 0; font-size: 0.88rem; color: #0f766e; font-weight: 600;">個人核心負責項目：</p>
 <ul style="margin-top: 4px;">
-<li>針對 Google Map 地圖缺乏深度文化資訊的痛點，將祭祀地點、依宗教飲食習慣篩選餐廳、文化傳承、休閒活動與交通路線整合於單一導航平台。</li>
-<li>分析各商業導航與藝文類 App 缺點，整理大眾在休閒旅遊、拜拜進香與文化體驗上的行程需求。</li>
-<li>提出以使用者為核心的一站式功能架構，產出兼具文化推廣與商業變現可行性的創新企劃案。</li>
+<li><strong>客群痛點研析：</strong>分析 Google Maps 與藝文 App 缺點，梳理進香拜拜、文化傳承與飲食路線之一站式整合需求。</li>
+<li><strong>功能規劃與企劃產出：</strong>主導以使用者為核心之平台功能架構，產出具商業變現與推廣可行性之提案簡報。</li>
 </ul>
 
 <hr style="border: 0; border-top: 1px dashed #e2e8f0; margin: 14px 0;">
 
-<h4 style="margin: 0 0 6px 0; color: #1e293b; font-size: 1.05rem;">2026 FineBI × 台灣數據力大賞比賽</h4>
+<h4 style="margin: 0 0 6px 0; color: #1e293b; font-size: 1.05rem;">2026 FineBI × 台灣數據力大賞</h4>
+<p style="margin: 2px 0 6px 0; font-size: 0.88rem; color: #2563eb; font-weight: 600;">專案主題：全球供應鏈風險與物流分析（韌性指揮官）</p>
+<p style="margin: 2px 0 6px 0; font-size: 0.88rem; color: #0f766e; font-weight: 600;">個人核心負責項目：</p>
 <ul style="margin-top: 4px;">
-<li>針對跨國貨運延誤與港口壅塞風險，建立自動辨識高危運單並指派改道任務的應變機制。</li>
-<li>結合極端天候與港口壅塞等多項指標訂定加權排序標準，將異常數據直接轉化為行動指引。</li>
-<li>利用 AI 篩選 5,000 筆資料，經情境模擬推演出及時改道可減少 20% 延誤天數。</li>
+<li><strong>決策邏輯建構：</strong>主導「Notice 發現 → Diagnose 診斷 → Act 交付」之管理框架，將異常數據轉化為指派改道任務指引。</li>
+<li><strong>情境推演與情資應用：</strong>規劃天候硬規則攔截與軟風險排序流程，推演出及時改道可降低 20% 延誤天數之情境策略。</li>
 </ul>
 </div>
 </div>
