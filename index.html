@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>李心愉 (Hsin-Yu Li) | 個人學術與專案首頁</title>
+    <title>李心愉 | 個人學術與專案首頁</title>
     <style>
         :root {
             --primary: #1e3a8a;
@@ -58,4 +58,115 @@
             font-size: 0.95rem;
         }
         .tags {
-            
+            margin-top: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .tag {
+            background-color: #eff6ff;
+            color: var(--primary-light);
+            border: 1px solid #dbeafe;
+            padding: 3px 10px;
+            border-radius: 14px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        h2 {
+            color: var(--primary);
+            font-size: 1.25rem;
+            border-left: 4px solid var(--primary-light);
+            padding-left: 10px;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+        .card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin-bottom: 18px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #1e293b;
+            font-size: 1.12rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .period {
+            font-size: 0.85rem;
+            color: #64748b;
+            font-weight: normal;
+        }
+        .badge {
+            background: #e0f2fe;
+            color: #0369a1;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .card p {
+            margin: 8px 0;
+            font-size: 0.93rem;
+            color: var(--text-sub);
+            text-align: justify;
+        }
+        ul {
+            margin: 8px 0;
+            padding-left: 20px;
+            color: var(--text-sub);
+            font-size: 0.93rem;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        @media (max-width: 650px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .tags {
+                justify-content: center;
+            }
+        }
+        a {
+            color: var(--primary-light);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <img class="profile-photo" src="https://github.com/cyrrxin7.png" alt="李心愉">
+        <div class="header-info">
+            <h1>李心愉 (Hsin-Yu Li)</h1>
+            <p><strong>系所：</strong>國立臺北大學 數位行銷學士學位學程（預計 2027 畢業）</p>
+            <p><strong>學號：</strong>311259006</p>
+            <p><strong>指導教授：</strong>戴敏育 教授</p>
+            <p><strong>聯絡方式：</strong>omory389520@gmail.com ｜ cyrrxin7@gmail.com ｜ 0968-838-756</p>
+            <p><strong>GitHub：</strong><a href="
