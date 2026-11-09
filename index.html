@@ -1,460 +1,373 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#071321">
-    <meta name="format-detection" content="telephone=no, email=no, address=no">
-    <title>李心愉｜個人履歷與專案作品集</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>李心愉 (Hsin-Yu Li) | 個人履歷與專案作品集</title>
+  <style>
+    :root {
+      --text-dark: #1f2937;
+      --text-body: #4b5563;
+      --text-muted: #6b7280;
+      --border-light: #e5e7eb;
+      --bg-white: #ffffff;
+      --bg-tag: #f3f4f6;
+      --border-tag: #d1d5db;
+    }
 
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f4f6f8;
-            color: #253342;
-            font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-            line-height: 1.75;
-            font-size: 14px;
-            -webkit-text-size-adjust: 100%;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        a {
-            color: #1684a0;
-            text-decoration: none;
-            overflow-wrap: anywhere;
-        }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background-color: var(--bg-white);
+      color: var(--text-dark);
+      line-height: 1.65;
+      padding: 40px 24px;
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+    }
 
-        a[href^="tel"],
-        a[href^="tel"]:visited,
-        a[href^="tel"]:hover,
-        a[href^="tel"]:active {
-            color: #53616e !important;
-            text-decoration: none !important;
-            pointer-events: none !important;
-            cursor: default !important;
-        }
+    /* 頂部個人資料區（無頭貼，純文字靠左，灰底分隔線） */
+    .profile-header {
+      padding-bottom: 24px;
+      margin-bottom: 28px;
+      border-bottom: 1px solid var(--border-light);
+    }
 
-        .phone-plain,
-        .phone-plain span,
-        .phone-plain a {
-            color: #53616e !important;
-            text-decoration: none !important;
-            pointer-events: none !important;
-            font-weight: 400;
-        }
+    .profile-name {
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
 
-        .wrap {
-            max-width: 940px;
-            margin: 30px auto;
-            padding: 30px 34px;
-            background-color: #ffffff;
-            box-shadow: 0 8px 30px rgba(28, 52, 64, 0.06);
-        }
+    .profile-meta {
+      font-size: 0.92rem;
+      color: var(--text-body);
+      margin-bottom: 6px;
+    }
 
-        .profile {
-            display: grid;
-            grid-template-columns: 112px 1fr;
-            gap: 24px;
-            align-items: center;
-            padding: 0 0 25px;
-            border-bottom: 1px solid #cfd8df;
-        }
+    .profile-meta strong {
+      color: var(--text-dark);
+      font-weight: 600;
+    }
 
-        .avatar {
-            width: 108px;
-            height: 140px;
-            object-fit: cover;
-            border: 1px solid #cbd4dc;
-            padding: 3px;
-            background-color: #ffffff;
-            display: block;
-        }
+    /* 一般純文字顏色，無特殊藍色 */
+    .plain-link {
+      color: var(--text-body);
+      text-decoration: none;
+    }
 
-        .intro h1 {
-            font-size: 27px;
-            margin: 0 0 8px;
-            color: #253342;
-            line-height: 1.3;
-        }
+    /* 標籤列表：修復被喀掉的問題，改為允許自動換行並確保間距 */
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
 
-        .intro h1 span {
-            font-size: 21px;
-            color: #536779;
-            font-weight: 600;
-        }
+    .tag {
+      background-color: var(--bg-tag);
+      color: var(--text-dark);
+      border: 1px solid var(--border-tag);
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
 
-        .intro p {
-            font-size: 12px;
-            margin: 2px 0;
-            color: #53616e;
-        }
+    /* 區塊標題（深色字配深灰左邊線） */
+    .section-title {
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      border-left: 3.5px solid var(--text-dark);
+      padding-left: 10px;
+      margin-bottom: 14px;
+      line-height: 1.25;
+    }
 
-        .intro b {
-            color: #253342;
-            font-weight: 700;
-        }
+    /* 內容外框卡片 */
+    .card {
+      background-color: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 22px 24px;
+      margin-bottom: 28px;
+    }
 
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 7px;
-            margin-top: 13px;
-        }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
 
-        .tags span {
-            background-color: rgba(22, 132, 160, 0.05);
-            color: #1684a0;
-            border: 1px solid rgba(22, 132, 160, 0.25);
-            padding: 4px 11px;
-            font-size: 11px;
-            border-radius: 4px;
-            font-weight: 500;
-        }
+    .card-title {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
 
-        section {
-            margin-top: 28px;
-        }
+    /* 進行中標籤（灰白風） */
+    .status-badge {
+      background-color: var(--bg-tag);
+      color: var(--text-dark);
+      border: 1px solid var(--border-tag);
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 2px 10px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
 
-        h2 {
-            font-size: 18px;
-            margin: 0 0 13px;
-            padding-left: 12px;
-            border-left: 4px solid #168da4;
-            color: #253342;
-            line-height: 1.4;
-        }
+    .date-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
 
-        h3 {
-            font-size: 15px;
-            margin: 0;
-            color: #253342;
-            line-height: 1.45;
-        }
+    .sub-heading {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin: 14px 0 6px;
+    }
 
-        .card {
-            border: 1px solid #d6dfe5;
-            border-radius: 5px;
-            padding: 20px 22px;
-            background-color: #ffffff;
-        }
+    .desc-text {
+      font-size: 0.88rem;
+      color: var(--text-body);
+      margin-bottom: 10px;
+    }
 
-        .card p,
-        .card li {
-            font-size: 12px;
-            color: #5b6874;
-        }
+    .desc-text strong {
+      color: var(--text-dark);
+    }
 
-        .card p {
-            margin: 9px 0;
-        }
+    .bullet-list {
+      list-style: disc;
+      padding-left: 18px;
+      font-size: 0.88rem;
+      color: var(--text-body);
+    }
 
-        .card b {
-            color: #253342;
-            font-weight: 700;
-        }
+    .bullet-list li {
+      margin-bottom: 6px;
+    }
 
-        .card ul {
-            padding-left: 19px;
-            margin: 6px 0;
-        }
+    .bullet-list li:last-child {
+      margin-bottom: 0;
+    }
 
-        .card li {
-            padding: 2px 0;
-        }
+    .bullet-list strong {
+      color: var(--text-dark);
+    }
 
-        .card-heading {
-            display: flex;
-            justify-content: space-between;
-            gap: 12px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
+    /* 工作經驗細項 */
+    .work-item {
+      margin-top: 14px;
+    }
 
-        .status {
-            font-size: 11px;
-            color: #18758a;
-            background-color: #e6f3f5;
-            padding: 3px 10px;
-            border: 1px solid #c8e5e9;
-            border-radius: 3px;
-        }
+    .work-item-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 3px;
+    }
 
-        .date {
-            font-size: 11px;
-            color: #82909b;
-        }
+    .work-item-desc {
+      font-size: 0.88rem;
+      color: var(--text-body);
+      padding-left: 4px;
+    }
 
-        .role {
-            margin-top: 13px;
-        }
+    /* 底部雙欄：強制左右框框大小一致 */
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: stretch;
+    }
 
-        .role b {
-            display: inline-block;
-            color: #253342;
-            font-size: 12px;
-        }
+    .grid-col {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
 
-        .role p {
-            margin: 2px 0;
-        }
+    .grid-col .card {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 0;
+    }
 
-        .columns {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 22px;
-            align-items: stretch;
-            margin-top: 28px;
-        }
+    .half-block {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
 
-        .columns > section {
-            margin-top: 0;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
+    .divider {
+      border: 0;
+      border-top: 1px solid var(--border-light);
+      margin: 18px 0;
+    }
 
-        .columns > section > .card {
-            flex: 1;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-light);
+    }
 
-        .skill + .skill {
-            margin-top: 24px;
-            padding-top: 17px;
-            border-top: 1px solid #e2e8ed;
-        }
-
-        .skill h3 {
-            font-size: 13px;
-            color: #253342;
-        }
-
-        .skill ul {
-            margin-top: 6px;
-            margin-bottom: 0;
-        }
-
-        .mini-project + .mini-project {
-            margin-top: 19px;
-            padding-top: 17px;
-            border-top: 1px solid #e2e8ed;
-        }
-
-        .mini-project h3 {
-            font-size: 13px;
-            color: #253342;
-        }
-
-        .mini-project p {
-            margin: 6px 0;
-        }
-
-        .chips {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 4px;
-        }
-
-        .chips span {
-            font-size: 10px;
-            color: #1684a0;
-            border: 1px solid rgba(22, 132, 160, 0.22);
-            background-color: rgba(241, 248, 250, 0.6);
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-weight: 500;
-        }
-
-        .footer {
-            text-align: center;
-            color: #9aa5ad;
-            font-size: 10px;
-            padding: 25px 0 0;
-        }
-
-        @media (max-width: 650px) {
-            .wrap {
-                margin: 0;
-                padding: 22px 17px;
-            }
-
-            .profile {
-                grid-template-columns: 82px 1fr;
-                gap: 14px;
-            }
-
-            .avatar {
-                width: 80px;
-                height: 108px;
-            }
-
-            .intro h1 {
-                font-size: 21px;
-            }
-
-            .intro h1 span {
-                font-size: 15px;
-            }
-
-            .columns {
-                grid-template-columns: 1fr;
-            }
-
-            .card {
-                padding: 16px;
-            }
-        }
-    </style>
+    @media (max-width: 680px) {
+      .bottom-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<main class="wrap">
-    <div class="profile">
-        <img class="avatar" src="https://github.com/cyrrxin7.png" alt="李心愉個人照片">
-        <div class="intro">
-            <h1>李心愉 <span>(Hsin-Yu Li)</span></h1>
-            <p><b>系所：</b>國立臺北大學 數位行銷學士學位學程（預計 2027 畢業）</p>
-            <p><b>學號：</b>311259006</p>
-            <p><b>指導教授：</b>戴敏育 教授</p>
-            <p>
-                <b>聯絡方式：</b>omory389520@gmail.com　|　cyrrxin7@gmail.com　|　<span class="phone-plain"><span>0968</span><span>-</span><span>838</span><span>-</span><span>756</span></span>
-            </p>
-            <p>
-                <b>GitHub：</b><a href="https://github.com/cyrrxin7" target="_blank" rel="noopener noreferrer">github.com/cyrrxin7</a>
-            </p>
-            <div class="tags">
-                <span>工作流程自動化</span>
-                <span>商業分析 (BA)</span>
-                <span>專案管理 (PM)</span>
-                <span>Agentic AI</span>
-                <span>智財公文數位化</span>
-            </div>
-        </div>
-    </div>
+  <div class="container">
+    <!-- 頂部個人資訊（無頭貼） -->
+    <header class="profile-header">
+      <h1 class="profile-name">李心愉 (Hsin-Yu Li)</h1>
+      <p class="profile-meta"><strong>系所：</strong>國立臺北大學 數位行銷學士學位學程 (預計 2027 畢業)</p>
+      <p class="profile-meta"><strong>學號：</strong>311259006</p>
+      <p class="profile-meta"><strong>指導教授：</strong>戴敏育 教授</p>
+      <p class="profile-meta"><strong>聯絡方式：</strong>omary389520@gmail.com &nbsp;|&nbsp; cyrrxin7@gmail.com &nbsp;|&nbsp; 0968-838-756</p>
+      <p class="profile-meta"><strong>GitHub：</strong><span class="plain-link">github.com/cyrrxin7</span></p>
+      
+      <!-- 標籤排版：確保在同一排或自適應不被喀掉 -->
+      <div class="tag-list">
+        <span class="tag">工作流程自動化</span>
+        <span class="tag">商業分析 (BA)</span>
+        <span class="tag">專案管理 (PM)</span>
+        <span class="tag">Agentic AI</span>
+        <span class="tag">智財公文數位化</span>
+      </div>
+    </header>
 
-    <section id="professional">
-        <h2>專業專題</h2>
-        <article class="card">
-            <div class="card-heading">
-                <h3>MarVoiReflex：結合 Agentic AI 的數位行銷工作流程語音助理</h3>
-                <span class="status">進行中</span>
-            </div>
-            <p>
-                <b>專案簡介：</b>針對小型商家社群行銷人員在每週貼文準備時反覆搜尋、比對與整理活動圖片與文案的痛點，以 Windows 本機 Agent 架構結合中文語音辨識、小型語言模型意圖理解與任務規劃模組，落實白名單工具受限操作與搬移前預覽確認機制，協助降低整理耗時與人為分類錯誤
-            </p>
-            <p><b>個人核心職責與分工：</b></p>
-            <ul>
-                <li>
-                    <b>需求訪談與痛點分析：</b>深入訪談小型商家與社群運營人員，拆解行銷文案與圖檔整理歸檔的繁瑣流程，轉化為具體系統規格
-                </li>
-                <li>
-                    <b>自然語言意圖理解提示詞設計：</b>定義多情境語音指令對應之行銷素材分類標準與系統指令架構
-                </li>
-                <li>
-                    <b>商業模式規劃 (BMC) 與簡報統合：</b>主導專案商業價值分析、使用者情境設計與對外評審簡報整合
-                </li>
-            </ul>
-            <p><b>專案資源：</b></p>
-            <ul>
-                <li>
-                    <b>程式碼倉庫：</b><a href="https://github.com/yo20ywork-max/MarVoiReflex" target="_blank" rel="noopener noreferrer">github.com/yo20ywork-max/MarVoiReflex</a>
-                </li>
-            </ul>
-        </article>
+    <!-- 畢業專題 -->
+    <h2 class="section-title">畢業專題</h2>
+    <section class="card">
+      <div class="card-header">
+        <div class="card-title">MarVoiReflex：結合 Agentic AI 的數位行銷工作流程語音助理</div>
+        <span class="status-badge">進行中</span>
+      </div>
+      <p class="desc-text">
+        <strong>專案簡介：</strong>針對小型商家社群行銷人員在每週貼文準備時反覆搜尋、比對與整理活動圖片與文案的痛點，以 Windows 本機 Agent 架構結合中文語音辨識、小型語言模型意圖理解與任務規劃模組，落實白名單工具受限操作與搬移前預覽確認機制，協助降低整理耗時與人為分類錯誤
+      </p>
+      <div class="sub-heading">個人核心職責與分工：</div>
+      <ul class="bullet-list">
+        <li><strong>需求訪談與痛點分析：</strong>深入訪談小型商家與社群運營人員，拆解行銷文案與圖檔整理歸檔的繁瑣流程，轉化為具體系統規格</li>
+        <li><strong>自然語言意圖理解提示詞設計：</strong>定義多情境語音指令對應之行銷素材分類標準與系統指令架構</li>
+        <li><strong>商業模式規劃 (BMC) 與簡報統合：</strong>主導專案商業價值分析、使用者情境設計與對外評審簡報整合</li>
+      </ul>
+      <div class="sub-heading">專案資源：</div>
+      <ul class="bullet-list">
+        <li><strong>程式碼倉庫：</strong><span class="plain-link">github.com/yo20ywork-max/MarVoiReflex</span></li>
+      </ul>
     </section>
 
-    <section id="experience">
-        <h2>工作與實務經歷</h2>
-        <article class="card">
-            <div class="card-heading">
-                <h3>長春人造樹脂廠股份有限公司｜產品標準部 工讀生</h3>
-                <span class="date">2023 - 至今</span>
-            </div>
-            <div class="role">
-                <b>【智財資產生命週期管理】</b>
-                <p>統籌跨國專利規費之流程控管、生命週期數位化追蹤與銷帳作業，落實合規與零逾期目標</p>
-            </div>
-            <div class="role">
-                <b>【跨部門公文流轉管考】</b>
-                <p>主導四大核心部門間之公文字表審查、流轉進度追蹤與內部簽核時限控管，優化行政協同效率</p>
-            </div>
-            <div class="role">
-                <b>【合規稽核與專案協調】</b>
-                <p>協辦年度專案查檢作業、合規稽核管制執行，以及跨部門專案公文事務之對外協調整合</p>
-            </div>
-        </article>
+    <!-- 工作與實務經歷 -->
+    <h2 class="section-title">工作與實務經歷</h2>
+    <section class="card">
+      <div class="card-header">
+        <div class="card-title">長春人造樹脂廠股份有限公司 | 產品標準部 工讀生</div>
+        <span class="date-text">2023 - 至今</span>
+      </div>
+
+      <div class="work-item">
+        <div class="work-item-title">【跨國專利憑證審核與數位化建檔】</div>
+        <p class="work-item-desc">負責跨國專利規費單據之案號核對、分類審查與數位化歸檔，維護智財檔案庫之完整性以利內部專利管理師調閱與查核</p>
+      </div>
+
+      <div class="work-item">
+        <div class="work-item-title">【跨部門公文簽核與核銷流程追蹤】</div>
+        <p class="work-item-desc">銜接四大核心部門之公文呈核與請款單據流轉，掌握跨單位遞送節奏並主動追蹤核銷進度，確保內部簽核流程順暢推進</p>
+      </div>
+
+      <div class="work-item">
+        <div class="work-item-title">【總部商務貴賓接待與會議資源調度】</div>
+        <p class="work-item-desc">負責外部重要商務訪客之參訪接待與動線安排，並協調跨單位會議空間與行政資源配置，維持企業對外商務溝通品質</p>
+      </div>
     </section>
 
-    <div class="columns">
-        <section id="skills">
-            <h2>專業證照</h2>
-            <article class="card">
-                <div class="skill">
-                    <h3>數位行銷與數據分析</h3>
-                    <ul>
-                        <li>Google Analytics (GA4) 認證</li>
-                        <li>Google Ads AI 科技輔助購物廣告認證</li>
-                        <li>Kaggle Python 認證</li>
-                    </ul>
-                </div>
-                <div class="skill">
-                    <h3>商管與內部控制</h3>
-                    <ul>
-                        <li>中華民國電腦稽核協會 企業內部控制認證</li>
-                        <li>會計事務 - 資訊 丙級技術士</li>
-                        <li>電子商務概論 實用級</li>
-                    </ul>
-                </div>
-            </article>
+    <!-- 底部雙欄：專業證照 & 專案經歷 -->
+    <div class="bottom-grid">
+      <div class="grid-col">
+        <h2 class="section-title">專業證照</h2>
+        <section class="card">
+          <div class="half-block">
+            <div class="sub-heading" style="margin-top: 0;">數位行銷與數據分析</div>
+            <ul class="bullet-list">
+              <li>Google Analytics (GA4) 認證</li>
+              <li>Google Ads AI 科技輔助購物廣告認證</li>
+              <li>Kaggle Python 認證</li>
+            </ul>
+          </div>
+          <hr class="divider">
+          <div class="half-block">
+            <div class="sub-heading" style="margin-top: 0;">商管與內部控制</div>
+            <ul class="bullet-list">
+              <li>中華民國電腦稽核協會 企業內部控制認證</li>
+              <li>會計事務-資訊 丙級技術士</li>
+              <li>電子商務概論 實用級</li>
+            </ul>
+          </div>
         </section>
+      </div>
 
-        <section id="projects">
-            <h2>專案經歷</h2>
-            <article class="card">
-                <div class="mini-project">
-                    <h3>2024 和泰智慧移動黑客松企劃提案</h3>
-                    <p><b>專案主題：</b>整合文化信仰與交通服務的一站式智慧導航 APP 企劃</p>
-                    <p><b>個人負責項目：</b></p>
-                    <div class="chips">
-                        <span>客群需求調研</span>
-                        <span>競品痛點分析</span>
-                        <span>商業創新企劃</span>
-                    </div>
-                </div>
-                <div class="mini-project">
-                    <h3>2026 FineBI × 台灣數據力大賞</h3>
-                    <p><b>專案主題：</b>全球供應鏈異常預警與自動改道決策系統</p>
-                    <p><b>個人負責項目：</b></p>
-                    <div class="chips">
-                        <span>風險應變流程規劃</span>
-                        <span>極端情境模擬推演</span>
-                        <span>商業價值分析</span>
-                    </div>
-                </div>
-            </article>
+      <div class="grid-col">
+        <h2 class="section-title">專案經歷</h2>
+        <section class="card">
+          <div class="half-block">
+            <div class="sub-heading" style="margin-top: 0;">2024 和泰智慧移動黑客松企劃提案</div>
+            <p class="desc-text" style="margin-bottom: 6px;"><strong>專案主題：</strong>整合文化信仰與交通服務的一站式智慧導航 APP 企劃</p>
+            <p class="desc-text" style="margin-bottom: 6px;"><strong>個人負責項目：</strong></p>
+            <!-- 標籤加上 flex-wrap 確保不會被喀掉 -->
+            <div class="tag-list" style="margin-top: 6px;">
+              <span class="tag">客群需求調研</span>
+              <span class="tag">競品痛點分析</span>
+              <span class="tag">商業創新企劃</span>
+            </div>
+          </div>
+          <hr class="divider">
+          <div class="half-block">
+            <div class="sub-heading" style="margin-top: 0;">2026 FineBI × 台灣數據力大賞</div>
+            <p class="desc-text" style="margin-bottom: 6px;"><strong>專案主題：</strong>全球供應鏈異常預警與自動改道決策系統</p>
+            <p class="desc-text" style="margin-bottom: 6px;"><strong>個人負責項目：</strong></p>
+            <div class="tag-list" style="margin-top: 6px;">
+              <span class="tag">風險應變流程規劃</span>
+              <span class="tag">極端情境模擬推演</span>
+              <span class="tag">商業價值分析</span>
+            </div>
+          </div>
         </section>
+      </div>
     </div>
 
-    <div class="footer">
-        李心愉｜個人履歷與專案作品集
-    </div>
-</main>
+    <footer>
+      李心愉 | 個人履歷與專案作品集
+    </footer>
+  </div>
 
 </body>
 </html>
