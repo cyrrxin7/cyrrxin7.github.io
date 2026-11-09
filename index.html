@@ -3,20 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>李心愉 (Hsin-Yu Li)｜個人履歷與專案作品集</title>
+  <title>李心愉 (Hsin-Yu Li) | 個人履歷與專案作品集</title>
   <style>
     :root {
-      --primary: #1e40af;
-      --primary-light: #eff6ff;
-      --primary-border: #bfdbfe;
-      --text-main: #1f2937;
-      --text-muted: #4b5563;
-      --text-light: #6b7280;
-      --bg-page: #f8fafc;
-      --bg-card: #ffffff;
-      --border-color: #e5e7eb;
-      --badge-green-bg: #dcfce7;
-      --badge-green-text: #15803d;
+      --accent-blue: #2b6cb0;
+      --tag-bg: #f0f7ff;
+      --tag-border: #bfd8f2;
+      --tag-text: #2b6cb0;
+      --text-dark: #1e293b;
+      --text-body: #475569;
+      --text-muted: #94a3b8;
+      --border-light: #e2e8f0;
+      --bg-white: #ffffff;
     }
 
     * {
@@ -26,106 +24,114 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-      background-color: var(--bg-page);
-      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background-color: var(--bg-white);
+      color: var(--text-dark);
       line-height: 1.65;
-      padding: 36px 20px;
+      padding: 40px 24px;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 820px;
       margin: 0 auto;
     }
 
-    /* 頂部個人資訊卡片 */
-    .profile-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 28px;
+    /* 頂部個人資料區（無外框、僅底部分隔線，還原原版設計） */
+    .profile-header {
       display: flex;
       gap: 28px;
       align-items: flex-start;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      padding-bottom: 28px;
       margin-bottom: 28px;
+      border-bottom: 1px solid var(--border-light);
     }
 
     .profile-photo {
-      width: 125px;
-      height: 155px;
+      width: 130px;
+      height: 162px;
       object-fit: cover;
-      border-radius: 8px;
-      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      border: 1px solid var(--border-light);
       flex-shrink: 0;
     }
 
     .profile-info {
       flex: 1;
+      min-width: 0;
     }
 
     .profile-name {
-      font-size: 1.65rem;
+      font-size: 1.6rem;
       font-weight: 700;
-      color: #111827;
+      color: var(--text-dark);
       margin-bottom: 8px;
+      letter-spacing: 0.02em;
     }
 
     .profile-meta {
-      font-size: 0.94rem;
-      color: var(--text-muted);
+      font-size: 0.9rem;
+      color: var(--text-body);
       margin-bottom: 4px;
     }
 
     .profile-meta strong {
-      color: var(--text-main);
+      color: var(--text-dark);
+      font-weight: 600;
     }
 
-    .profile-meta a {
-      color: #2563eb;
+    .link-blue {
+      color: var(--accent-blue);
       text-decoration: none;
     }
 
-    .profile-meta a:hover {
+    .link-blue:hover {
       text-decoration: underline;
     }
 
+    /* 標籤列表：強制單行不換行 */
     .tag-list {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       gap: 8px;
       margin-top: 14px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .tag-list::-webkit-scrollbar {
+      display: none;
     }
 
     .tag {
-      background-color: var(--primary-light);
-      color: #1d4ed8;
-      border: 1px solid var(--primary-border);
-      font-size: 0.82rem;
+      background-color: var(--tag-bg);
+      color: var(--tag-text);
+      border: 1px solid var(--tag-border);
+      font-size: 0.8rem;
       font-weight: 500;
       padding: 3px 10px;
-      border-radius: 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
-    /* 區塊標題 */
+    /* 區塊標題（深色字配藍色左邊線） */
     .section-title {
-      font-size: 1.18rem;
+      font-size: 1.12rem;
       font-weight: 700;
-      color: var(--primary);
-      border-left: 4px solid var(--primary);
+      color: var(--text-dark);
+      border-left: 3.5px solid var(--accent-blue);
       padding-left: 10px;
-      margin: 26px 0 14px;
-      line-height: 1.3;
+      margin-bottom: 14px;
+      line-height: 1.25;
     }
 
-    /* 通用內容卡片 */
+    /* 內容外框卡片 */
     .card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 24px 26px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-      margin-bottom: 24px;
+      background-color: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 22px 24px;
+      margin-bottom: 28px;
     }
 
     .card-header {
@@ -134,144 +140,145 @@
       align-items: center;
       gap: 12px;
       margin-bottom: 12px;
-      flex-wrap: wrap;
     }
 
     .card-title {
-      font-size: 1.08rem;
+      font-size: 1.02rem;
       font-weight: 700;
-      color: #111827;
+      color: var(--text-dark);
     }
 
+    /* 進行中標籤（還原淺藍底配藍字方角風格） */
     .status-badge {
-      background-color: var(--badge-green-bg);
-      color: var(--badge-green-text);
+      background-color: var(--tag-bg);
+      color: var(--tag-text);
+      border: 1px solid var(--tag-border);
       font-size: 0.78rem;
-      font-weight: 600;
+      font-weight: 500;
       padding: 2px 10px;
-      border-radius: 999px;
+      border-radius: 4px;
+      white-space: nowrap;
     }
 
     .date-text {
-      font-size: 0.88rem;
-      color: var(--text-light);
-      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      white-space: nowrap;
     }
 
     .sub-heading {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 700;
-      color: #111827;
+      color: var(--text-dark);
       margin: 14px 0 6px;
     }
 
     .desc-text {
-      font-size: 0.93rem;
-      color: var(--text-muted);
+      font-size: 0.88rem;
+      color: var(--text-body);
       margin-bottom: 10px;
+    }
+
+    .desc-text strong {
+      color: var(--text-dark);
     }
 
     .bullet-list {
       list-style: disc;
-      padding-left: 20px;
-      font-size: 0.93rem;
-      color: var(--text-muted);
+      padding-left: 18px;
+      font-size: 0.88rem;
+      color: var(--text-body);
     }
 
     .bullet-list li {
       margin-bottom: 6px;
     }
 
+    .bullet-list li:last-child {
+      margin-bottom: 0;
+    }
+
     .bullet-list strong {
-      color: var(--text-main);
+      color: var(--text-dark);
     }
 
-    .bullet-list a {
-      color: #2563eb;
-      text-decoration: none;
-    }
-
-    .bullet-list a:hover {
-      text-decoration: underline;
-    }
-
-    /* 工作經驗項目 */
+    /* 工作經驗細項 */
     .work-item {
       margin-top: 14px;
     }
 
     .work-item-title {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 700;
-      color: #111827;
+      color: var(--text-dark);
       margin-bottom: 3px;
     }
 
     .work-item-desc {
-      font-size: 0.93rem;
-      color: var(--text-muted);
+      font-size: 0.88rem;
+      color: var(--text-body);
       padding-left: 4px;
     }
 
-    /* 雙欄區域（證照與專案經歷） */
-    .grid-2 {
+    /* 底部雙欄：強制左右框框大小完全一致 */
+    .bottom-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
+      align-items: stretch;
+    }
+
+    .grid-col {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .grid-col .card {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 0;
+    }
+
+    .half-block {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
     }
 
     .divider {
       border: 0;
-      border-top: 1px solid var(--border-color);
-      margin: 16px 0;
+      border-top: 1px solid var(--border-light);
+      margin: 18px 0;
     }
 
     footer {
       text-align: center;
-      font-size: 0.85rem;
-      color: var(--text-light);
+      font-size: 0.8rem;
+      color: var(--text-muted);
       margin-top: 32px;
       padding-top: 16px;
-      border-top: 1px solid var(--border-color);
-    }
-
-    @media (max-width: 680px) {
-      .profile-card {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      .tag-list {
-        justify-content: center;
-      }
-      .grid-2 {
-        grid-template-columns: 1fr;
-      }
+      border-top: 1px solid var(--border-light);
     }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <!-- 個人基本資料 -->
-    <section class="profile-card">
-      <!-- 請將 src="profile.jpg" 改為你 GitHub 倉庫裡現有的照片檔名 -->
+    <!-- 頂部個人資訊 -->
+    <header class="profile-header">
+      <!-- 請確認 src="profile.jpg" 與你 GitHub 中的大頭照檔名相同 -->
       <img src="profile.jpg" alt="李心愉 (Hsin-Yu Li)" class="profile-photo">
       <div class="profile-info">
         <h1 class="profile-name">李心愉 (Hsin-Yu Li)</h1>
         <p class="profile-meta"><strong>系所：</strong>國立臺北大學 數位行銷學士學位學程 (預計 2027 畢業)</p>
         <p class="profile-meta"><strong>學號：</strong>311259006</p>
         <p class="profile-meta"><strong>指導教授：</strong>戴敏育 教授</p>
-        <p class="profile-meta">
-          <strong>聯絡方式：</strong>
-          <a href="mailto:omary389520@gmail.com">omary389520@gmail.com</a> ｜ 
-          <a href="mailto:cyrrxin7@gmail.com">cyrrxin7@gmail.com</a> ｜ 
-          0968-838-756
-        </p>
-        <p class="profile-meta">
-          <strong>GitHub：</strong>
-          <a href="https://github.com/cyrrxin7" target="_blank" rel="noopener">github.com/cyrrxin7</a>
-        </p>
+        <p class="profile-meta"><strong>聯絡方式：</strong>omary389520@gmail.com &nbsp;|&nbsp; cyrrxin7@gmail.com &nbsp;|&nbsp; 0968-838-756</p>
+        <p class="profile-meta"><strong>GitHub：</strong><a href="https://github.com/cyrrxin7" target="_blank" rel="noopener" class="link-blue">github.com/cyrrxin7</a></p>
         <div class="tag-list">
           <span class="tag">工作流程自動化</span>
           <span class="tag">商業分析 (BA)</span>
@@ -280,9 +287,9 @@
           <span class="tag">智財公文數位化</span>
         </div>
       </div>
-    </section>
+    </header>
 
-    <!-- 畢業專題（已由「專業專題」更新為「畢業專題」） -->
+    <!-- 畢業專題 -->
     <h2 class="section-title">畢業專題</h2>
     <section class="card">
       <div class="card-header">
@@ -300,15 +307,15 @@
       </ul>
       <div class="sub-heading">專案資源：</div>
       <ul class="bullet-list">
-        <li><strong>程式碼倉庫：</strong><a href="https://github.com/yo20ywork-max/MarVoiReflex" target="_blank" rel="noopener">github.com/yo20ywork-max/MarVoiReflex</a></li>
+        <li><strong>程式碼倉庫：</strong><a href="https://github.com/yo20ywork-max/MarVoiReflex" target="_blank" rel="noopener" class="link-blue">github.com/yo20ywork-max/MarVoiReflex</a></li>
       </ul>
     </section>
 
-    <!-- 工作與實務經驗（已更新為三項精煉專業描述） -->
-    <h2 class="section-title">工作與實務經驗</h2>
+    <!-- 工作與實務經歷 -->
+    <h2 class="section-title">工作與實務經歷</h2>
     <section class="card">
       <div class="card-header">
-        <div class="card-title">長春人造樹脂廠股份有限公司｜產品標準部 工讀生</div>
+        <div class="card-title">長春人造樹脂廠股份有限公司 | 產品標準部 工讀生</div>
         <span class="date-text">2023 - 至今</span>
       </div>
 
@@ -328,55 +335,61 @@
       </div>
     </section>
 
-    <!-- 專業證照 & 專案經歷 -->
-    <div class="grid-2">
-      <div>
+    <!-- 底部雙欄：專業證照 & 專案經歷（左右外框等寬等高） -->
+    <div class="bottom-grid">
+      <div class="grid-col">
         <h2 class="section-title">專業證照</h2>
         <section class="card">
-          <div class="sub-heading" style="margin-top: 0;">數位行銷與數據分析</div>
-          <ul class="bullet-list">
-            <li>Google Analytics (GA4) 認證</li>
-            <li>Google Ads AI 科技輔助購物廣告認證</li>
-            <li>Kaggle Python 認證</li>
-          </ul>
+          <div class="half-block">
+            <div class="sub-heading" style="margin-top: 0;">數位行銷與數據分析</div>
+            <ul class="bullet-list">
+              <li>Google Analytics (GA4) 認證</li>
+              <li>Google Ads AI 科技輔助購物廣告認證</li>
+              <li>Kaggle Python 認證</li>
+            </ul>
+          </div>
           <hr class="divider">
-          <div class="sub-heading">商管與內部控制</div>
-          <ul class="bullet-list">
-            <li>中華民國電腦稽核協會 企業內部控制認證</li>
-            <li>會計事務-資訊 丙級技術士</li>
-            <li>電子商務概論 實用級</li>
-          </ul>
+          <div class="half-block">
+            <div class="sub-heading" style="margin-top: 0;">商管與內部控制</div>
+            <ul class="bullet-list">
+              <li>中華民國電腦稽核協會 企業內部控制認證</li>
+              <li>會計事務-資訊 丙級技術士</li>
+              <li>電子商務概論 實用級</li>
+            </ul>
+          </div>
         </section>
       </div>
 
-      <div>
+      <div class="grid-col">
         <h2 class="section-title">專案經歷</h2>
         <section class="card">
-          <div class="sub-heading" style="margin-top: 0;">2024 和泰智慧移動黑客松企劃提案</div>
-          <p class="desc-text" style="margin-bottom: 6px;"><strong>專案主題：</strong>整合文化信仰與交通服務的一站式智慧導航 APP 企劃</p>
-          <p class="desc-text" style="margin-bottom: 6px;"><strong>個人負責項目：</strong></p>
-          <div class="tag-list" style="margin-top: 6px;">
-            <span class="tag">客群需求調研</span>
-            <span class="tag">競品痛點分析</span>
-            <span class="tag">商業創新企劃</span>
+          <div class="half-block">
+            <div class="sub-heading" style="margin-top: 0;">2024 和泰智慧移動黑客松企劃提案</div>
+            <p class="desc-text" style="margin-bottom: 6px;"><strong>專案主題：</strong>整合文化信仰與交通服務的一站式智慧導航 APP 企劃</p>
+            <p class="desc-text" style="margin-bottom: 6px;"><strong>個人負責項目：</strong></p>
+            <div class="tag-list" style="margin-top: 6px;">
+              <span class="tag">客群需求調研</span>
+              <span class="tag">競品痛點分析</span>
+              <span class="tag">商業創新企劃</span>
+            </div>
           </div>
-
           <hr class="divider">
-
-          <div class="sub-heading">2026 FineBI × 台灣數據力大賞</div>
-          <p class="desc-text" style="margin-bottom: 6px;"><strong>專案主題：</strong>全球供應鏈異常預警與自動改道決策系統</p>
-          <p class="desc-text" style="margin-bottom: 6px;"><strong>個人負責項目：</strong></p>
-          <div class="tag-list" style="margin-top: 6px;">
-            <span class="tag">風險應變流程規劃</span>
-            <span class="tag">極端情境模擬推演</span>
-            <span class="tag">商業價值分析</span>
+          <div class="half-block">
+            <div class="sub-heading" style="margin-top: 0;">2026 FineBI × 台灣數據力大賞</div>
+            <p class="desc-text" style="margin-bottom: 6px;"><strong>專案主題：</strong>全球供應鏈異常預警與自動改道決策系統</p>
+            <p class="desc-text" style="margin-bottom: 6px;"><strong>個人負責項目：</strong></p>
+            <div class="tag-list" style="margin-top: 6px;">
+              <span class="tag">風險應變流程規劃</span>
+              <span class="tag">極端情境模擬推演</span>
+              <span class="tag">商業價值分析</span>
+            </div>
           </div>
         </section>
       </div>
     </div>
 
     <footer>
-      李心愉｜個人履歷與專案作品集
+      李心愉 | 個人履歷與專案作品集
     </footer>
   </div>
 
