@@ -6,15 +6,13 @@
   <title>李心愉 (Hsin-Yu Li) | 個人履歷與專案作品集</title>
   <style>
     :root {
-      --accent-blue: #2b6cb0;
-      --tag-bg: #f0f7ff;
-      --tag-border: #bfd8f2;
-      --tag-text: #2b6cb0;
-      --text-dark: #1e293b;
-      --text-body: #475569;
-      --text-muted: #94a3b8;
-      --border-light: #e2e8f0;
+      --text-dark: #1f2937;
+      --text-body: #4b5563;
+      --text-muted: #6b7280;
+      --border-light: #e5e7eb;
       --bg-white: #ffffff;
+      --bg-tag: #f3f4f6;
+      --border-tag: #d1d5db;
     }
 
     * {
@@ -36,42 +34,24 @@
       margin: 0 auto;
     }
 
-    /* 頂部個人資料區（無外框、僅底部分隔線，還原原版設計） */
+    /* 頂部個人資料區（無頭貼，純文字靠左，灰底分隔線） */
     .profile-header {
-      display: flex;
-      gap: 28px;
-      align-items: flex-start;
-      padding-bottom: 28px;
+      padding-bottom: 24px;
       margin-bottom: 28px;
       border-bottom: 1px solid var(--border-light);
     }
 
-    .profile-photo {
-      width: 130px;
-      height: 162px;
-      object-fit: cover;
-      border-radius: 6px;
-      border: 1px solid var(--border-light);
-      flex-shrink: 0;
-    }
-
-    .profile-info {
-      flex: 1;
-      min-width: 0;
-    }
-
     .profile-name {
-      font-size: 1.6rem;
+      font-size: 1.65rem;
       font-weight: 700;
       color: var(--text-dark);
-      margin-bottom: 8px;
-      letter-spacing: 0.02em;
+      margin-bottom: 10px;
     }
 
     .profile-meta {
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       color: var(--text-body);
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
 
     .profile-meta strong {
@@ -79,47 +59,37 @@
       font-weight: 600;
     }
 
-    .link-blue {
-      color: var(--accent-blue);
+    /* 一般純文字顏色，無特殊藍色 */
+    .plain-link {
+      color: var(--text-body);
       text-decoration: none;
     }
 
-    .link-blue:hover {
-      text-decoration: underline;
-    }
-
-    /* 標籤列表：強制單行不換行 */
+    /* 標籤列表：修復被喀掉的問題，改為允許自動換行並確保間距 */
     .tag-list {
       display: flex;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       gap: 8px;
       margin-top: 14px;
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
-
-    .tag-list::-webkit-scrollbar {
-      display: none;
     }
 
     .tag {
-      background-color: var(--tag-bg);
-      color: var(--tag-text);
-      border: 1px solid var(--tag-border);
+      background-color: var(--bg-tag);
+      color: var(--text-dark);
+      border: 1px solid var(--border-tag);
       font-size: 0.8rem;
       font-weight: 500;
       padding: 3px 10px;
       border-radius: 4px;
       white-space: nowrap;
-      flex-shrink: 0;
     }
 
-    /* 區塊標題（深色字配藍色左邊線） */
+    /* 區塊標題（深色字配深灰左邊線） */
     .section-title {
       font-size: 1.12rem;
       font-weight: 700;
       color: var(--text-dark);
-      border-left: 3.5px solid var(--accent-blue);
+      border-left: 3.5px solid var(--text-dark);
       padding-left: 10px;
       margin-bottom: 14px;
       line-height: 1.25;
@@ -140,6 +110,7 @@
       align-items: center;
       gap: 12px;
       margin-bottom: 12px;
+      flex-wrap: wrap;
     }
 
     .card-title {
@@ -148,11 +119,11 @@
       color: var(--text-dark);
     }
 
-    /* 進行中標籤（還原淺藍底配藍字方角風格） */
+    /* 進行中標籤（灰白風） */
     .status-badge {
-      background-color: var(--tag-bg);
-      color: var(--tag-text);
-      border: 1px solid var(--tag-border);
+      background-color: var(--bg-tag);
+      color: var(--text-dark);
+      border: 1px solid var(--border-tag);
       font-size: 0.78rem;
       font-weight: 500;
       padding: 2px 10px;
@@ -220,7 +191,7 @@
       padding-left: 4px;
     }
 
-    /* 底部雙欄：強制左右框框大小完全一致 */
+    /* 底部雙欄：強制左右框框大小一致 */
     .bottom-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -263,29 +234,33 @@
       padding-top: 16px;
       border-top: 1px solid var(--border-light);
     }
+
+    @media (max-width: 680px) {
+      .bottom-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <!-- 頂部個人資訊 -->
+    <!-- 頂部個人資訊（無頭貼） -->
     <header class="profile-header">
-      <!-- 請確認 src="profile.jpg" 與你 GitHub 中的大頭照檔名相同 -->
-      <img src="profile.jpg" alt="李心愉 (Hsin-Yu Li)" class="profile-photo">
-      <div class="profile-info">
-        <h1 class="profile-name">李心愉 (Hsin-Yu Li)</h1>
-        <p class="profile-meta"><strong>系所：</strong>國立臺北大學 數位行銷學士學位學程 (預計 2027 畢業)</p>
-        <p class="profile-meta"><strong>學號：</strong>311259006</p>
-        <p class="profile-meta"><strong>指導教授：</strong>戴敏育 教授</p>
-        <p class="profile-meta"><strong>聯絡方式：</strong>omary389520@gmail.com &nbsp;|&nbsp; cyrrxin7@gmail.com &nbsp;|&nbsp; 0968-838-756</p>
-        <p class="profile-meta"><strong>GitHub：</strong><a href="https://github.com/cyrrxin7" target="_blank" rel="noopener" class="link-blue">github.com/cyrrxin7</a></p>
-        <div class="tag-list">
-          <span class="tag">工作流程自動化</span>
-          <span class="tag">商業分析 (BA)</span>
-          <span class="tag">專案管理 (PM)</span>
-          <span class="tag">Agentic AI</span>
-          <span class="tag">智財公文數位化</span>
-        </div>
+      <h1 class="profile-name">李心愉 (Hsin-Yu Li)</h1>
+      <p class="profile-meta"><strong>系所：</strong>國立臺北大學 數位行銷學士學位學程 (預計 2027 畢業)</p>
+      <p class="profile-meta"><strong>學號：</strong>311259006</p>
+      <p class="profile-meta"><strong>指導教授：</strong>戴敏育 教授</p>
+      <p class="profile-meta"><strong>聯絡方式：</strong>omary389520@gmail.com &nbsp;|&nbsp; cyrrxin7@gmail.com &nbsp;|&nbsp; 0968-838-756</p>
+      <p class="profile-meta"><strong>GitHub：</strong><span class="plain-link">github.com/cyrrxin7</span></p>
+      
+      <!-- 標籤排版：確保在同一排或自適應不被喀掉 -->
+      <div class="tag-list">
+        <span class="tag">工作流程自動化</span>
+        <span class="tag">商業分析 (BA)</span>
+        <span class="tag">專案管理 (PM)</span>
+        <span class="tag">Agentic AI</span>
+        <span class="tag">智財公文數位化</span>
       </div>
     </header>
 
@@ -307,7 +282,7 @@
       </ul>
       <div class="sub-heading">專案資源：</div>
       <ul class="bullet-list">
-        <li><strong>程式碼倉庫：</strong><a href="https://github.com/yo20ywork-max/MarVoiReflex" target="_blank" rel="noopener" class="link-blue">github.com/yo20ywork-max/MarVoiReflex</a></li>
+        <li><strong>程式碼倉庫：</strong><span class="plain-link">github.com/yo20ywork-max/MarVoiReflex</span></li>
       </ul>
     </section>
 
@@ -335,7 +310,7 @@
       </div>
     </section>
 
-    <!-- 底部雙欄：專業證照 & 專案經歷（左右外框等寬等高） -->
+    <!-- 底部雙欄：專業證照 & 專案經歷 -->
     <div class="bottom-grid">
       <div class="grid-col">
         <h2 class="section-title">專業證照</h2>
@@ -367,6 +342,7 @@
             <div class="sub-heading" style="margin-top: 0;">2024 和泰智慧移動黑客松企劃提案</div>
             <p class="desc-text" style="margin-bottom: 6px;"><strong>專案主題：</strong>整合文化信仰與交通服務的一站式智慧導航 APP 企劃</p>
             <p class="desc-text" style="margin-bottom: 6px;"><strong>個人負責項目：</strong></p>
+            <!-- 標籤加上 flex-wrap 確保不會被喀掉 -->
             <div class="tag-list" style="margin-top: 6px;">
               <span class="tag">客群需求調研</span>
               <span class="tag">競品痛點分析</span>
